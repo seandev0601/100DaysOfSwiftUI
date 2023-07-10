@@ -31,6 +31,7 @@ To track my progress through the 100DaysOfSwiftUI challenge, I will update the f
 
 | Project | Topic | From Day |
 | --- | --- | --- |
+| [01](Project01-WeSplit) | WeSplit | Day 16 - 17|
 
 Each project's folder will contain the completed code and any relevant resources for that specific topic.
 
