@@ -29,9 +29,9 @@ To follow along with this repository, you will need the following tools and soft
 
 To track my progress through the 100DaysOfSwiftUI challenge, I will update the following table with links to each project's code and associated project:
 
-| Project | Topic | From Day |
-| --- | --- | --- |
-| [01](Project01-WeSplit) | WeSplit | Day 16 - 17|
+| Project | Topic | From Day | Screenshot |
+| --- | --- | --- | --- 
+| [01](Project01-WeSplit) | WeSplit | Day 16 - 18 | <div><img src="Project01-WeSplit/Screenshots/Day18-challenge.png" width="200"></div> |
 
 Each project's folder will contain the completed code and any relevant resources for that specific topic.
 
