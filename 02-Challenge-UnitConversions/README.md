@@ -34,6 +34,6 @@ If you were going for **length conversion** you might have:
 ## Screenshots
 
 <div>
-    <img src="Screenshots/Day18-timeconversion_1.png" width="250">
-    <img src="Screenshots/Day18-timeconversion_2.png" width="250">
+    <img src="Screenshots/timeconversion_1.png" width="250">
+    <img src="Screenshots/timeconversion_2.png" width="250">
 </div>
