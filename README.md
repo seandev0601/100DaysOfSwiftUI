@@ -33,6 +33,7 @@ To track my progress through the 100DaysOfSwiftUI challenge, I will update the f
 | --- | --- | --- | 
 | [01](01-Project01-WeSplit) | WeSplit | Day 16 - 18 |
 | [Challenge](02-Challenge-UnitConversions) | Unit Conversions | Day 19 |
+| [02](03-Project02-GuessTheFlag) | GuessTheFlag | Day 20 - 21 |
 
 Each project's folder will contain the completed code and any relevant resources for that specific topic.
 
