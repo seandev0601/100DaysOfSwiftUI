@@ -9,9 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showingScore = false
+    @State private var showingReset = false
     @State private var scoreTitle = ""
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
+    
+    @State private var score = 0
+    @State private var round = 1
+    @State private var alertMessage = ""
     
     var body: some View {
         
@@ -30,6 +35,10 @@ struct ContentView: View {
                     .font(.largeTitle.bold())
                     .foregroundColor(.white)
                 
+                Text("Round \(round)")
+                    .font(.headline)
+                    .foregroundColor(.white)
+
                 VStack(spacing: 15) {
                     VStack {
                         Text("Tap the flag of")
@@ -59,32 +68,54 @@ struct ContentView: View {
                 Spacer()
                 Spacer()
                 
-                Text("Score: ???")
+                Text("Score: \(score)")
                     .font(.title.bold())
                     .foregroundColor(.white)
                 
                 Spacer()
             }
             .padding()
+            
         }
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue", action: askQuestion)
         } message: {
-            Text("Your score is ???")
+            Text(alertMessage)
+        }
+        .alert(scoreTitle, isPresented: $showingReset) {
+            Button("Play again", action: resetGame)
+        } message: {
+            Text(alertMessage)
         }
     }
     
     func flagTapped(_ number:Int) {
+        
         if number == correctAnswer {
-            scoreTitle = "Correct"
+            scoreTitle = "Round \(round) - Correct"
+            score += 1
+            alertMessage = "Your score is \(score)."
         } else {
-            scoreTitle = "Wrong"
+            scoreTitle = "Round \(round) - Wrong"
+            alertMessage = "Wrong! That’s the flag of \(countries[number])."
         }
         
-        showingScore = true
+        if round == 8 {
+            showingReset = true
+        } else {
+            showingScore = true
+        }
     }
     
     func askQuestion() {
+        round += 1
+        countries.shuffle()
+        correctAnswer = Int.random(in: 0...2)
+    }
+    
+    func resetGame() {
+        round = 1
+        score = 0
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
