@@ -19,6 +19,30 @@ In this second SwiftUI project we’re going to be building a guessing game that
     1. Add an **`@State`** property to store the user’s **score**, modify it when they get an **answer** right or **wrong**, then **display** it in the **alert** and in the **score label**.
     2. When someone chooses the **wrong** flag, **tell** them their **mistake** in your alert message – something like “Wrong! That’s the flag of France,” for example.
     3. Make the game show **only** **8 questions**, at which point they see a **final alert** judging their score and can **restart** the game.
+- Day 24 Challenge
+    - Go back to project 2 and replace the Image view used for flags with a new FlagImage() view that renders one flag image using the specific set of modifiers we had.
+```swift
+struct FlagImage: View {
+    var flagName: String
+
+    init(_ flagName: String) {
+        self.flagName = flagName
+    }
+
+    var body: some View {
+        Image(flagName)
+            .renderingMode(.original)
+            .clipShape(Capsule())
+            .shadow(radius: 5)
+    }
+}
+
+Button {
+    flagTapped(number)
+} label: {
+    FlagImage(countries[number])
+}
+```
 
 
 ## **My Note**
