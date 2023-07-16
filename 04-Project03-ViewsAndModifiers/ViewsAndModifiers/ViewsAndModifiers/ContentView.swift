@@ -12,6 +12,11 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            
+            Text("This is a prominent title!")
+                .prominentTitle()
+                .padding()
+            
             MottoView()
 
             Button("Hello World") {

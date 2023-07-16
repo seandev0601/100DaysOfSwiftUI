@@ -16,6 +16,7 @@
 		CDBBFEA62A62D77B007AA65D /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBFEA52A62D77B007AA65D /* Title.swift */; };
 		CDBBFEA92A62D7AA007AA65D /* Watermark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBFEA82A62D7AA007AA65D /* Watermark.swift */; };
 		CDBBFEAC2A62D7FA007AA65D /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBFEAB2A62D7FA007AA65D /* GridStack.swift */; };
+		CDBBFEB12A63A40A007AA65D /* ProminentTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBFEB02A63A40A007AA65D /* ProminentTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		CDBBFEA52A62D77B007AA65D /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		CDBBFEA82A62D7AA007AA65D /* Watermark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watermark.swift; sourceTree = "<group>"; };
 		CDBBFEAB2A62D7FA007AA65D /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
+		CDBBFEB02A63A40A007AA65D /* ProminentTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProminentTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				CDBBFEA52A62D77B007AA65D /* Title.swift */,
 				CDBBFEA82A62D7AA007AA65D /* Watermark.swift */,
+				CDBBFEB02A63A40A007AA65D /* ProminentTitle.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				CDBBFEA92A62D7AA007AA65D /* Watermark.swift in Sources */,
 				CDBBFE932A626F1E007AA65D /* ContentView.swift in Sources */,
 				CDBBFEAC2A62D7FA007AA65D /* GridStack.swift in Sources */,
+				CDBBFEB12A63A40A007AA65D /* ProminentTitle.swift in Sources */,
 				CDBBFEA32A62D6E3007AA65D /* CapsuleText.swift in Sources */,
 				CDBBFE912A626F1E007AA65D /* ViewsAndModifiersApp.swift in Sources */,
 			);
