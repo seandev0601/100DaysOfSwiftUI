@@ -36,6 +36,7 @@ To track my progress through the 100DaysOfSwiftUI challenge, I will update the f
 | [02](03-Project02-GuessTheFlag) | GuessTheFlag | Day 20 - 22 |
 | [03](04-Project03-ViewsAndModifiers) | ViewsAndModifiers | Day 23 - 24 |
 | [Challenge 2](05-Milestone&Challenge) | RockPaperScissors | Day 25 |
+| [04](06-Project04-BetterRest) | BetterRest | Day 26 - 27 |
 
 
 Each project's folder will contain the completed code and any relevant resources for that specific topic.
