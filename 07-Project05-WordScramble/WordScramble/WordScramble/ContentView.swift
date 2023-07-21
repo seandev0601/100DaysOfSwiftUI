@@ -16,33 +16,51 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var score = 0
+    
     var body: some View {
         NavigationView {
-            List {
-                Section {
+            VStack {
+                List {
+                    Text(rootWord)
+                        .font(.headline)
                     TextField("Enter your word", text: $newWord)
                         .textInputAutocapitalization(.never)
-                }
-                
-                Section {
-                    ForEach(usedWords, id: \.self) { word in
-                        HStack {
-                            Image(systemName: "\(word.count).circle")
-                            Text(word)
-                            
+                    
+                    Section {
+                        ForEach(usedWords, id: \.self) { word in
+                            HStack {
+                                Image(systemName: "\(word.count).circle")
+                                Text(word)
+                                Spacer()
+                                Text("+ \(1 + word.count)")
+                                    .foregroundColor(.green)
+                            }
                         }
                     }
                 }
+                
+                Spacer()
+                
+                Text("Your score is \(score)")
+                        .font(.largeTitle)
             }
-            .navigationTitle(rootWord)
+            .navigationTitle("Word Scramble")
             .onSubmit(addNewWord)
             .onAppear(perform: startGame)
+            .toolbar {
+                Button("Restart", action: startGame)
+            }
             .alert(errorTitle, isPresented: $showingError) {
-                Button("OK", role: .cancel) { }
+                Button("OK", role: .cancel) { clearWord() }
             } message: {
                 Text(errorMessage)
             }
         }
+    }
+    
+    func clearWord() {
+        newWord = ""
     }
     
     func addNewWord() {
@@ -60,10 +78,23 @@ struct ContentView: View {
             return
         }
         
+        guard isLong(word: answer) else {
+            wordError(title: "Word not possible", message: "It is less than 3 characters.")
+            return
+        }
+        
+        guard isDifferent(word: answer) else {
+            wordError(title: "Word not possible", message: "It is the same as the root word.")
+            return
+        }
+        
         guard isReal(word: answer) else {
             wordError(title: "Word not recognized", message: "You can't just make them up, you know!")
             return
         }
+        
+        self.score += 1
+        self.score += answer.count
         
         withAnimation {
             usedWords.insert(answer, at: 0)
@@ -77,6 +108,8 @@ struct ContentView: View {
             if let startWords = try? String(contentsOf: startWordsURL) {
                 let allWords = startWords.components(separatedBy: "\n")
                 rootWord = allWords.randomElement() ?? "silkworm"
+                score = 0
+                usedWords.removeAll()
                 return
             }
         }
@@ -100,6 +133,14 @@ struct ContentView: View {
         }
         
         return true
+    }
+    
+    func isLong(word: String) -> Bool {
+        word.count >= 3
+    }
+
+    func isDifferent(word: String) -> Bool {
+        rootWord != word
     }
     
     func isReal(word: String) -> Bool {
