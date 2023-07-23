@@ -15,4 +15,11 @@ struct AppData {
         AnimationView(name: "Animatiing Bindings", view: AnyView(AnimatingBindings())),
         AnimationView(name: "Animation 3DEffect", view: AnyView(Animation3DEffect()))
     ]
+    
+    static let day33Topic: [AnimationView] = [
+        AnimationView(name: "Animation Stack", view: AnyView(AnimationStack())),
+        AnimationView(name: "Animation Gestures", view: AnyView(AnimationGestures())),
+        AnimationView(name: "Animation Transition", view: AnyView(AnimationTransition())),
+        AnimationView(name: "Custom Transition", view: AnyView(CustomTransition()))
+    ]
 }

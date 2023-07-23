@@ -17,6 +17,11 @@
 		CDE5FC602A6CCBF200C679C4 /* Animation3DEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5FC5F2A6CCBF200C679C4 /* Animation3DEffect.swift */; };
 		CDE5FC632A6CCE5B00C679C4 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5FC622A6CCE5B00C679C4 /* AppData.swift */; };
 		CDE5FC652A6CD0EE00C679C4 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5FC642A6CD0EE00C679C4 /* AnimationView.swift */; };
+		CDE5FC672A6CF28B00C679C4 /* AnimationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5FC662A6CF28B00C679C4 /* AnimationStack.swift */; };
+		CDE5FC692A6CF90800C679C4 /* AnimationGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5FC682A6CF90800C679C4 /* AnimationGestures.swift */; };
+		CDE5FC6B2A6CFD5400C679C4 /* AnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5FC6A2A6CFD5400C679C4 /* AnimationTransition.swift */; };
+		CDE5FC6E2A6D06A100C679C4 /* CornerRotateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5FC6D2A6D06A100C679C4 /* CornerRotateModifier.swift */; };
+		CDE5FC702A6D06F200C679C4 /* CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5FC6F2A6D06F200C679C4 /* CustomTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		CDE5FC5F2A6CCBF200C679C4 /* Animation3DEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation3DEffect.swift; sourceTree = "<group>"; };
 		CDE5FC622A6CCE5B00C679C4 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		CDE5FC642A6CD0EE00C679C4 /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+		CDE5FC662A6CF28B00C679C4 /* AnimationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationStack.swift; sourceTree = "<group>"; };
+		CDE5FC682A6CF90800C679C4 /* AnimationGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationGestures.swift; sourceTree = "<group>"; };
+		CDE5FC6A2A6CFD5400C679C4 /* AnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTransition.swift; sourceTree = "<group>"; };
+		CDE5FC6D2A6D06A100C679C4 /* CornerRotateModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRotateModifier.swift; sourceTree = "<group>"; };
+		CDE5FC6F2A6D06F200C679C4 /* CustomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,7 @@
 		CDE5FC492A6CC98000C679C4 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				CDE5FC6C2A6D067700C679C4 /* ViewModifier */,
 				CDE5FC612A6CCE4A00C679C4 /* Models */,
 				CDE5FC582A6CCA9D00C679C4 /* Views */,
 				CDE5FC4A2A6CC98000C679C4 /* AnimationsApp.swift */,
@@ -88,6 +99,10 @@
 				CDE5FC5B2A6CCB8200C679C4 /* CustomAnimation.swift */,
 				CDE5FC5D2A6CCBA500C679C4 /* AnimatingBindings.swift */,
 				CDE5FC5F2A6CCBF200C679C4 /* Animation3DEffect.swift */,
+				CDE5FC662A6CF28B00C679C4 /* AnimationStack.swift */,
+				CDE5FC682A6CF90800C679C4 /* AnimationGestures.swift */,
+				CDE5FC6A2A6CFD5400C679C4 /* AnimationTransition.swift */,
+				CDE5FC6F2A6D06F200C679C4 /* CustomTransition.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -99,6 +114,14 @@
 				CDE5FC642A6CD0EE00C679C4 /* AnimationView.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CDE5FC6C2A6D067700C679C4 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				CDE5FC6D2A6D06A100C679C4 /* CornerRotateModifier.swift */,
+			);
+			path = ViewModifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,10 +194,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE5FC692A6CF90800C679C4 /* AnimationGestures.swift in Sources */,
 				CDE5FC4D2A6CC98000C679C4 /* ContentView.swift in Sources */,
+				CDE5FC672A6CF28B00C679C4 /* AnimationStack.swift in Sources */,
 				CDE5FC652A6CD0EE00C679C4 /* AnimationView.swift in Sources */,
+				CDE5FC6E2A6D06A100C679C4 /* CornerRotateModifier.swift in Sources */,
 				CDE5FC4B2A6CC98000C679C4 /* AnimationsApp.swift in Sources */,
 				CDE5FC5A2A6CCB1800C679C4 /* Animations.swift in Sources */,
+				CDE5FC702A6D06F200C679C4 /* CustomTransition.swift in Sources */,
+				CDE5FC6B2A6CFD5400C679C4 /* AnimationTransition.swift in Sources */,
 				CDE5FC5C2A6CCB8200C679C4 /* CustomAnimation.swift in Sources */,
 				CDE5FC602A6CCBF200C679C4 /* Animation3DEffect.swift in Sources */,
 				CDE5FC5E2A6CCBA500C679C4 /* AnimatingBindings.swift in Sources */,
