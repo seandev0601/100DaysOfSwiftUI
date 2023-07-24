@@ -44,12 +44,18 @@ Button {
 }
 ```
 
+- Day 34 Challenge
+    1. When you tap a flag, make it spin around 360 degrees on the Y axis.
+    2. Make the other two buttons fade out to 25% opacity.
+    3. Add a third effect of your choosing to the two flags the user didn’t choose – maybe make them scale down? Or flip in a different direction? Experiment! (change **blur**)
+
 
 ## **My Note**
 
 - [Day 20](https://hsiangdev.notion.site/Day-20-Project-2-part-1-100DaysOfSwiftUI-46b35e0d906c4346a55b400ac98ac650?pvs=4)
 - [Day 21](https://hsiangdev.notion.site/Day-21-Project-2-part-2-100DaysOfSwiftUI-4eaeee1d01254f54b5dc3312299a57ad?pvs=4)
 - [Day 22](https://hsiangdev.notion.site/Day-22-Project-2-part-3-100DaysOfSwiftUI-8c5e0e5df37645b5aa9af1cf43d8b8a8?pvs=4)
+- [Day 34](https://hsiangdev.notion.site/Day-34-Project-6-part-3-Challenge-100DaysOfSwiftUI-f8efda13e99a4b10b71e4d770b826f96?pvs=4)
 
 ## Screenshots
 
@@ -65,5 +71,12 @@ Button {
   <img src="Screenshots/day22-challenge_2.png" width="250">
   <img src="Screenshots/day22-challenge_3.png" width="250">
   <img src="Screenshots/day22-challenge_4.png" width="250">
+</div>
+
+- Day 34
+
+<div>
+  <img src="Screenshots/day34-challenge_1.png" width="250">
+  <img src="Screenshots/day34-challenge_2.png" width="250">
 </div>
 

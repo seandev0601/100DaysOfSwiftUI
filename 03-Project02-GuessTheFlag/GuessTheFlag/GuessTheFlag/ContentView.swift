@@ -18,6 +18,11 @@ struct ContentView: View {
     @State private var round = 1
     @State private var alertMessage = ""
     
+    @State private var selectFlag = -1
+    @State private var animationAmount = 0.0
+    @State private var animationOpacity = 1.0
+    @State private var animationRadius = 0.0
+    
     var body: some View {
         
         ZStack {
@@ -54,6 +59,9 @@ struct ContentView: View {
                             flagTapped(number)
                         } label: {
                             FlagImage(countries[number])
+                                .opacity(selectFlag != number ? animationOpacity : 1.0)
+                                .blur(radius: selectFlag != number ? animationRadius : 0.0)
+                                .rotation3DEffect(.degrees(selectFlag == number ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
                         }
                     }
                 }
@@ -87,7 +95,14 @@ struct ContentView: View {
     }
     
     func flagTapped(_ number:Int) {
-        
+        selectFlag = number
+        withAnimation {
+            animationAmount = 360
+        }
+        withAnimation {
+            animationOpacity = 0.25
+            animationRadius = 5.0
+        }
         if number == correctAnswer {
             scoreTitle = "Round \(round) - Correct"
             score += 1
@@ -108,11 +123,19 @@ struct ContentView: View {
         round += 1
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        selectFlag = -1
+        animationAmount = 0
+        animationOpacity = 1.0
+        animationRadius = 0.0
     }
     
     func resetGame() {
         round = 1
         score = 0
+        selectFlag = -1
+        animationAmount = 0
+        animationOpacity = 1.0
+        animationRadius = 0.0
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
