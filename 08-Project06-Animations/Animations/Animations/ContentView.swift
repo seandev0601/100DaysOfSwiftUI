@@ -39,6 +39,20 @@ struct ContentView: View {
                         .font(.headline)
                 }
                 
+                Section() {
+                    ForEach(AppData.day34Topic) { data in
+                        NavigationLink {
+                            data.view
+                        } label: {
+                            Text("\(data.name)")
+                        }
+                    }
+                    
+                } header: {
+                    Text("Day 34")
+                        .font(.headline)
+                }
+                
             }
             .navigationTitle("Animations")
         }

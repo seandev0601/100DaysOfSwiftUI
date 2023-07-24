@@ -22,4 +22,8 @@ struct AppData {
         AnimationView(name: "Animation Transition", view: AnyView(AnimationTransition())),
         AnimationView(name: "Custom Transition", view: AnyView(CustomTransition()))
     ]
+    
+    static let day34Topic: [AnimationView] = [
+        AnimationView(name: "Animation Challenge", view: AnyView(AnimationChallenge()))
+    ]
 }

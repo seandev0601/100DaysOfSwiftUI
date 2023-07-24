@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDB9B8332A6E68AE009B78EE /* AnimationChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9B8322A6E68AE009B78EE /* AnimationChallenge.swift */; };
 		CDE5FC4B2A6CC98000C679C4 /* AnimationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5FC4A2A6CC98000C679C4 /* AnimationsApp.swift */; };
 		CDE5FC4D2A6CC98000C679C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE5FC4C2A6CC98000C679C4 /* ContentView.swift */; };
 		CDE5FC4F2A6CC98100C679C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDE5FC4E2A6CC98100C679C4 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CDB9B8322A6E68AE009B78EE /* AnimationChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationChallenge.swift; sourceTree = "<group>"; };
 		CDE5FC472A6CC98000C679C4 /* Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE5FC4A2A6CC98000C679C4 /* AnimationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsApp.swift; sourceTree = "<group>"; };
 		CDE5FC4C2A6CC98000C679C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				CDE5FC682A6CF90800C679C4 /* AnimationGestures.swift */,
 				CDE5FC6A2A6CFD5400C679C4 /* AnimationTransition.swift */,
 				CDE5FC6F2A6D06F200C679C4 /* CustomTransition.swift */,
+				CDB9B8322A6E68AE009B78EE /* AnimationChallenge.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				CDE5FC4D2A6CC98000C679C4 /* ContentView.swift in Sources */,
 				CDE5FC672A6CF28B00C679C4 /* AnimationStack.swift in Sources */,
 				CDE5FC652A6CD0EE00C679C4 /* AnimationView.swift in Sources */,
+				CDB9B8332A6E68AE009B78EE /* AnimationChallenge.swift in Sources */,
 				CDE5FC6E2A6D06A100C679C4 /* CornerRotateModifier.swift in Sources */,
 				CDE5FC4B2A6CC98000C679C4 /* AnimationsApp.swift in Sources */,
 				CDE5FC5A2A6CCB1800C679C4 /* Animations.swift in Sources */,
