@@ -40,6 +40,8 @@ To track my progress through the 100DaysOfSwiftUI challenge, I will update the f
 | [05](07-Project05-WordScramble) | WordScramble | Day 29 - 31 |
 | [06](08-Project06-Animations) | Animations | Day 32 - 34 |
 
+| [07](09-Challenge-MultiplicationGame) | MultiplicationGame | Day 35 |
+
 
 
 
