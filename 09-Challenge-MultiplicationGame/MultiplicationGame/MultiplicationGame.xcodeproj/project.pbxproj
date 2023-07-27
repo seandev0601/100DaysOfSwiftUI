@@ -15,7 +15,7 @@
 		CD18301A2A7121090002751D /* NumberImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1830192A7121090002751D /* NumberImage.swift */; };
 		CD18301C2A7138FD0002751D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD18301B2A7138FD0002751D /* GameView.swift */; };
 		CD18301E2A7148FB0002751D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD18301D2A7148FB0002751D /* Question.swift */; };
-		CD1830202A7159090002751D /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD18301F2A7159090002751D /* AnswerView.swift */; };
+		CD1830202A7159090002751D /* AnswerMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD18301F2A7159090002751D /* AnswerMark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		CD1830192A7121090002751D /* NumberImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberImage.swift; sourceTree = "<group>"; };
 		CD18301B2A7138FD0002751D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		CD18301D2A7148FB0002751D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		CD18301F2A7159090002751D /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
+		CD18301F2A7159090002751D /* AnswerMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerMark.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 				CD1830192A7121090002751D /* NumberImage.swift */,
 				CD1830172A6FE3EF0002751D /* SettingView.swift */,
 				CD18301B2A7138FD0002751D /* GameView.swift */,
-				CD18301F2A7159090002751D /* AnswerView.swift */,
+				CD18301F2A7159090002751D /* AnswerMark.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 				CD18301A2A7121090002751D /* NumberImage.swift in Sources */,
 				CD1830182A6FE3EF0002751D /* SettingView.swift in Sources */,
 				CD18300A2A6FDFC40002751D /* ContentView.swift in Sources */,
-				CD1830202A7159090002751D /* AnswerView.swift in Sources */,
+				CD1830202A7159090002751D /* AnswerMark.swift in Sources */,
 				CD18301E2A7148FB0002751D /* Question.swift in Sources */,
 				CD1830082A6FDFC40002751D /* MultiplicationGameApp.swift in Sources */,
 				CD18301C2A7138FD0002751D /* GameView.swift in Sources */,
@@ -300,6 +300,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MultiplicationGame/Preview Content\"";
@@ -329,6 +330,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MultiplicationGame/Preview Content\"";

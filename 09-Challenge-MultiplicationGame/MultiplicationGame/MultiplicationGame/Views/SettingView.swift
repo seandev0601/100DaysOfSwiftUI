@@ -9,6 +9,9 @@ import SwiftUI
 
 struct SettingView: View {
     
+    @State private var animationAmount =  1.0
+    @State private var animationEnabled = false
+    @State private var animationScale = 1.0
     @State private var multiplicationNumber = 2
     @State private var questionNumber = 5
     let questions = [5, 10, 20]
@@ -33,16 +36,22 @@ struct SettingView: View {
                     Text("Select a multiplication table:")
                         .font(.headline)
                     
-                    Stepper(value: $multiplicationNumber, in: 2...12, step: 1) {
+                    Stepper(value: $multiplicationNumber, in: 2...12, step: 1, onEditingChanged: { bool in
+                        animationEnabled = bool
+                    }) {
                         HStack {
                             Spacer()
                             Text("✖")
                                 .font(.largeTitle)
+                            
                             NumberImage(multiplicationNumber)
                                 .padding(.trailing, 30)
+                                .scaleEffect(animationEnabled ? 1 : 1.1)
+                                .animation(.linear(duration: 0.1), value: animationEnabled)
                         }
                     }
                     .padding(.trailing, 45)
+                
                     
                     Text("How many questions?")
                         .font(.headline)
@@ -66,7 +75,14 @@ struct SettingView: View {
                 Spacer()
                 
                 Button() {
-                    generateQuestions()
+                    withAnimation(.linear(duration: 1.5)) {
+                        animationScale = 10.0
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        print("Animation finished")
+                        generateQuestions()
+                    }
                 } label: {
                     Image("cat_go")
                         .resizable()
@@ -75,7 +91,19 @@ struct SettingView: View {
                         .padding(50)
                         .background(.yellow)
                         .clipShape(Ellipse())
+                        .overlay(
+                            Circle()
+                                .strokeBorder(.yellow, lineWidth: 3)
+                                .scaleEffect(animationAmount)
+                                .opacity(2 - animationAmount)
+                                .animation(.easeInOut(duration: 1).repeatForever(autoreverses: false), value: animationAmount)
+                        )
+                        .onAppear {
+                            animationAmount = 2
+                        }
                 }
+                .scaleEffect(animationScale)
+                .offset(y: animationScale != 1 ? -400 : 0)
             }
             .padding(20)
         }
@@ -91,6 +119,7 @@ struct SettingView: View {
         }
         
         play(questionNumber, allQuestions)
+        animationScale = 1
     }
 }
 

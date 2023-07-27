@@ -34,17 +34,10 @@ struct NumberImage: View {
                 .frame(width: size, height: size)
 
             Text("\(number)")
-//                .font(.system(size: size * 0.4, weight: .medium))
                 .font(.custom("ChalkboardSE-Bold", size: size * 0.5))
                 .foregroundColor(type == .none ? color : .white)
 
         }
-        
-//        Image(systemName: "\(number)" )
-//            .resizable()
-//            .scaledToFit()
-//            .foregroundColor(color)
-//            .frame(width: size, height: size)
     }
 }
 

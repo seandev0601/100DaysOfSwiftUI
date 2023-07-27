@@ -19,6 +19,10 @@ struct GameView: View {
     @State private var answered = false
     @State private var showingGameOverAlert = false
     
+    
+    @State private var answerResult: Answer = .none
+    @State private var animationAmount = 0.0
+    
     var resetGame: () -> Void
     
     var currentQuestion: Question {
@@ -43,7 +47,7 @@ struct GameView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("Question \(round)")
+                Text("Question \(round) / \(questionNumber)")
                     .font(.largeTitle)
                     .foregroundColor(.white)
                 
@@ -75,12 +79,10 @@ struct GameView: View {
                                     checkAnswer(option)
                                 } label: {
                                     NumberImage(option, type: .fill, size: 80)
+                                        .answer(with: currentQuestion.answer == option ? .correct : .incorrect,
+                                                isHidden: !answered)
                                 }
                                 .disabled(answered)
-                                
-                                if answered {
-                                    AnswerView(currentQuestion.answer == option ? .correct : .incorrect)
-                                }
                             }
                         }
                     }
@@ -103,7 +105,7 @@ struct GameView: View {
                 .alert("Game Over!", isPresented: $showingGameOverAlert) {
                     Button("Play again", action: reset)
                 } message: {
-                    Text("Your total score is \(score).\nStart New Game?")
+                    Text("Your total score is \(score).\nStart new game?")
                 }
                 
                 HStack(alignment:.center, spacing: 30) {
@@ -118,6 +120,7 @@ struct GameView: View {
                             .frame(width: 80, height: 80)
                             .shadow(radius: 5)
                     }
+                    .rotation3DEffect(.degrees(answerResult == .correct ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
                     
                     VStack {
                         Text("\(score)")
@@ -130,6 +133,7 @@ struct GameView: View {
                             .frame(width: 80, height: 80)
                             .shadow(radius: 5)
                     }
+                    .rotation3DEffect(.degrees(answerResult == .correct ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
                     
                     VStack {
                         Text("\(incorrectCount)")
@@ -142,6 +146,7 @@ struct GameView: View {
                             .frame(width: 80, height: 80)
                             .shadow(radius: 5)
                     }
+                    .rotation3DEffect(.degrees(answerResult == .incorrect ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
                 }
                 .padding()
                 
@@ -156,19 +161,28 @@ struct GameView: View {
         if selectOption == currentQuestion.answer {
             score += 10
             correctCount += 1
+            answerResult = .correct
         } else {
             incorrectCount += 1
+            answerResult = .incorrect
+        }
+        
+        withAnimation {
+            animationAmount = 360
         }
     }
     
     func askQuestion() {
         answered = false
+        answerResult = .none
         
         if round < questionNumber {
             round += 1
         } else {
             showingGameOverAlert = true
         }
+        
+        animationAmount = 0
         
     }
     
@@ -179,6 +193,8 @@ struct GameView: View {
         correctCount = 0
         incorrectCount = 0
         answered = false
+        answerResult = .none
+        animationAmount = 0
     }
 }
 
