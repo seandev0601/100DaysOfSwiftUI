@@ -15,20 +15,19 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
-                        }
-                        
-                        Spacer()
-                        
-                        Text(item.amount, format: .currency(code:"USD"))
+                Section("Personal") {
+                    ForEach(expenses.personalItems) { item in
+                        ExpenseView(item)
                     }
+                    .onDelete(perform: removePersonalItems)
                 }
-                .onDelete(perform: removeItems)
+                
+                Section("Business") {
+                    ForEach(expenses.businessItems) { item in
+                        ExpenseView(item)
+                    }
+                    .onDelete(perform: removeBusinessItems)
+                }
             }
             .navigationTitle("Expenses")
             .toolbar {
@@ -44,8 +43,20 @@ struct ContentView: View {
         }
     }
     
-    func removeItems(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
+    func removePersonalItems(at offsets: IndexSet) {
+        let item = expenses.personalItems[offsets.first!]
+        removeItems(of: item)
+    }
+    
+    func removeBusinessItems(at offsets: IndexSet) {
+        let item = expenses.businessItems[offsets.first!]
+        removeItems(of: item)
+    }
+    
+    func removeItems(of item: ExpenseItem) {
+        if let index = expenses.items.firstIndex(where: { $0.id == item.id }) {
+            expenses.items.remove(at: index)
+        }
     }
 }
 
