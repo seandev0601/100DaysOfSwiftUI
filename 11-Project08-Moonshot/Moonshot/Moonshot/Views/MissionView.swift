@@ -17,6 +17,8 @@ struct MissionView: View {
     let mission: Mission
     let crew: [CrewMember]
     
+    @State private var animationEnable = false
+    
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
@@ -26,13 +28,31 @@ struct MissionView: View {
                         .scaledToFit()
                         .frame(maxWidth: geometry.size.width * 0.6)
                         .padding(.top)
+                        .rotation3DEffect(.degrees(animationEnable ? 360 : 0), axis: (x: 0, y: 1, z: 0))
+                        .animation(.linear(duration: 0.5), value: animationEnable)
+                        .onTapGesture {
+                            animationEnable.toggle()
+                        }
                     
+
                     VStack(alignment: .leading) {
                         
                         Rectangle()
                             .frame(height: 2)
                             .foregroundColor(.lightBackground)
                             .padding(.vertical)
+                        
+                        Text("Launch Date")
+                            .font(.title.bold())
+                            .padding(.bottom, 5)
+                        
+                        Text(mission.formattedLaunchDate)
+                        
+                        Rectangle()
+                            .frame(height: 2)
+                            .foregroundColor(.lightBackground)
+                            .padding(.vertical)
+
                         
                         Text("Mission Highlights")
                             .font(.title.bold())
@@ -59,26 +79,10 @@ struct MissionView: View {
                             NavigationLink {
                                 AnstronautView(anstronaut: crewMember.astronaut)
                             } label: {
-                                HStack {
-                                    Image(crewMember.astronaut.id)
-                                        .resizable()
-                                        .frame(width: 104, height: 72)
-                                        .clipShape(Capsule())
-                                        .overlay(
-                                            Capsule()
-                                                .strokeBorder(.white, lineWidth: 1)
-                                        )
-                                    VStack(alignment: .leading) {
-                                        Text(crewMember.astronaut.name)
-                                            .foregroundColor(.white)
-                                            .font(.headline)
-                                        
-                                        Text(crewMember.role)
-                                            .foregroundColor(.secondary)
-                                    }
-                                    .padding(.horizontal)
-                                    
-                                }
+                                CrewMemberView(
+                                    imageName: crewMember.astronaut.id,
+                                    name: crewMember.astronaut.name,
+                                    role: crewMember.role)
                             }
                         }
                     }
