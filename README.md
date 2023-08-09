@@ -39,11 +39,10 @@ To track my progress through the 100DaysOfSwiftUI challenge, I will update the f
 | [04](06-Project04-BetterRest) | BetterRest | Day 26 - 28 |
 | [05](07-Project05-WordScramble) | WordScramble | Day 29 - 31 |
 | [06](08-Project06-Animations) | Animations | Day 32 - 34 |
-| [07](09-Challenge-MultiplicationGame) | MultiplicationGame | Day 35 |
-| [08](10-Project07-iExpense) | iExpense | Day 36-38 |
-| [09](11-Project08-Moonshot) | Moonshot | Day 39-42 |
-
-
+| [Challenge 3](09-Challenge-MultiplicationGame) | MultiplicationGame | Day 35 |
+| [07](10-Project07-iExpense) | iExpense | Day 36-38 |
+| [08](11-Project08-Moonshot) | Moonshot | Day 39-42 |
+| [09](12-Project09-Drawing) | Drawing | Day 43 |
 
 
 Each project's folder will contain the completed code and any relevant resources for that specific topic.
