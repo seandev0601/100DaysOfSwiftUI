@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDAC3F462A8470E5005C130E /* CustomFlower.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC3F452A8470E5005C130E /* CustomFlower.swift */; };
+		CDAC3F482A848911005C130E /* CustomImagePaint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC3F472A848911005C130E /* CustomImagePaint.swift */; };
+		CDAC3F4A2A84BA96005C130E /* CustomColorCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAC3F492A84BA96005C130E /* CustomColorCircle.swift */; };
 		CDB5A8DD2A809514005AB537 /* DrawingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5A8DC2A809514005AB537 /* DrawingApp.swift */; };
 		CDB5A8DF2A809514005AB537 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB5A8DE2A809514005AB537 /* ContentView.swift */; };
 		CDB5A8E12A809515005AB537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB5A8E02A809515005AB537 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CDAC3F452A8470E5005C130E /* CustomFlower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlower.swift; sourceTree = "<group>"; };
+		CDAC3F472A848911005C130E /* CustomImagePaint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePaint.swift; sourceTree = "<group>"; };
+		CDAC3F492A84BA96005C130E /* CustomColorCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorCircle.swift; sourceTree = "<group>"; };
 		CDB5A8D92A809514005AB537 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB5A8DC2A809514005AB537 /* DrawingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingApp.swift; sourceTree = "<group>"; };
 		CDB5A8DE2A809514005AB537 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +91,9 @@
 				CDB5A8EB2A80D956005AB537 /* CustomPaths.swift */,
 				CDB5A8F32A8325FC005AB537 /* CustomShape.swift */,
 				CDB5A8F52A835E76005AB537 /* CustomInsettableShape.swift */,
+				CDAC3F452A8470E5005C130E /* CustomFlower.swift */,
+				CDAC3F472A848911005C130E /* CustomImagePaint.swift */,
+				CDAC3F492A84BA96005C130E /* CustomColorCircle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,10 +180,13 @@
 				CDB5A8EC2A80D956005AB537 /* CustomPaths.swift in Sources */,
 				CDB5A8F22A80DE5F005AB537 /* DrawView.swift in Sources */,
 				CDB5A8F42A8325FD005AB537 /* CustomShape.swift in Sources */,
+				CDAC3F482A848911005C130E /* CustomImagePaint.swift in Sources */,
 				CDB5A8F62A835E76005AB537 /* CustomInsettableShape.swift in Sources */,
 				CDB5A8DF2A809514005AB537 /* ContentView.swift in Sources */,
+				CDAC3F4A2A84BA96005C130E /* CustomColorCircle.swift in Sources */,
 				CDB5A8DD2A809514005AB537 /* DrawingApp.swift in Sources */,
 				CDB5A8EF2A80DE35005AB537 /* AppData.swift in Sources */,
+				CDAC3F462A8470E5005C130E /* CustomFlower.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
