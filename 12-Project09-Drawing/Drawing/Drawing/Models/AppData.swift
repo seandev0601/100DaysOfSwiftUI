@@ -20,4 +20,11 @@ struct AppData {
         DrawView(name: "Creative borders and fills using ImagePaint", view: AnyView(CustomImagePaint())),
         DrawView(name: "Enabling high-performance Metal rendering with drawingGroup()", view: AnyView(CustomColorCircle()))
     ]
+    
+    static let day45Topic: [DrawView] = [
+        DrawView(name: "Special effects: blurs, blending, saturation()", view: AnyView(CustomViewRender())),
+        DrawView(name: "Animating simple shapes with animatableData", view: AnyView(CustomTrapezoidAnimation())),
+        DrawView(name: "Animating complex shapes with AnimatablePair", view: AnyView(CustomAnimatablePair())),
+        DrawView(name: "Creating a spirograph", view: AnyView(CustomSpirograph()))
+    ]
 }
