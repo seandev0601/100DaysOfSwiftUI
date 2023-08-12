@@ -27,4 +27,9 @@ struct AppData {
         DrawView(name: "Animating complex shapes with AnimatablePair", view: AnyView(CustomAnimatablePair())),
         DrawView(name: "Creating a spirograph", view: AnyView(CustomSpirograph()))
     ]
+    
+    static let day46Topic: [DrawView] = [
+        DrawView(name: "Custom Arrow", view: AnyView(CustomArrow())),
+        DrawView(name: "Custom ColorCyclingRectangle", view: AnyView(CustomColorRectangle()))
+    ]
 }
