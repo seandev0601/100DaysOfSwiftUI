@@ -43,6 +43,7 @@ To track my progress through the 100DaysOfSwiftUI challenge, I will update the f
 | [07](10-Project07-iExpense) | iExpense | Day 36 - 38 |
 | [08](11-Project08-Moonshot) | Moonshot | Day 39 - 42 |
 | [09](12-Project09-Drawing) | Drawing | Day 43 - 46 |
+| [Challenge 4](13-Challenge-HabitTracker) | Habit Tracker | Day 47 |
 
 
 Each project's folder will contain the completed code and any relevant resources for that specific topic.
