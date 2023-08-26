@@ -14,6 +14,8 @@
 		CD2FB7CA2A95A3EA00340A7C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FB7C92A95A3EA00340A7C /* Order.swift */; };
 		CD2FB7CD2A95A63F00340A7C /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FB7CC2A95A63F00340A7C /* AddressView.swift */; };
 		CD2FB7CF2A95DE0300340A7C /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FB7CE2A95DE0300340A7C /* CheckoutView.swift */; };
+		CD2FB7D12A98908400340A7C /* Cupcake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FB7D02A98908400340A7C /* Cupcake.swift */; };
+		CD2FB7D42A99A37500340A7C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FB7D32A99A37500340A7C /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		CD2FB7C92A95A3EA00340A7C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		CD2FB7CC2A95A63F00340A7C /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		CD2FB7CE2A95DE0300340A7C /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		CD2FB7D02A98908400340A7C /* Cupcake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupcake.swift; sourceTree = "<group>"; };
+		CD2FB7D32A99A37500340A7C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 		CD2FB7B72A90409B00340A7C /* CupcakeCorner */ = {
 			isa = PBXGroup;
 			children = (
+				CD2FB7D22A99A36500340A7C /* Extensions */,
 				CD2FB7CB2A95A63100340A7C /* Views */,
 				CD2FB7C62A948E6000340A7C /* Models */,
 				CD2FB7B82A90409B00340A7C /* CupcakeCornerApp.swift */,
@@ -79,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				CD2FB7C92A95A3EA00340A7C /* Order.swift */,
+				CD2FB7D02A98908400340A7C /* Cupcake.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -90,6 +96,14 @@
 				CD2FB7CE2A95DE0300340A7C /* CheckoutView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CD2FB7D22A99A36500340A7C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD2FB7D32A99A37500340A7C /* String+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,9 +177,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD2FB7BB2A90409B00340A7C /* ContentView.swift in Sources */,
+				CD2FB7D42A99A37500340A7C /* String+Extension.swift in Sources */,
 				CD2FB7B92A90409B00340A7C /* CupcakeCornerApp.swift in Sources */,
 				CD2FB7CF2A95DE0300340A7C /* CheckoutView.swift in Sources */,
 				CD2FB7CA2A95A3EA00340A7C /* Order.swift in Sources */,
+				CD2FB7D12A98908400340A7C /* Cupcake.swift in Sources */,
 				CD2FB7CD2A95A63F00340A7C /* AddressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

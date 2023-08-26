@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct CheckoutView: View {
-    @ObservedObject var order: Order
+    @ObservedObject var cupcake: Cupcake
     
     @State private var confirmationMessage = ""
     @State private var showingConfirmation = false
+    @State private var showingError = false
     
     var body: some View {
         ScrollView {
@@ -25,7 +26,7 @@ struct CheckoutView: View {
                 }
                 .frame(height: 233)
                 
-                Text("Your total is \(order.cost, format: .currency(code: "USD"))")
+                Text("Your total is \(cupcake.order.cost, format: .currency(code: "USD"))")
                     .font(.title)
                 
                 Button("Place Order", action: {
@@ -33,7 +34,12 @@ struct CheckoutView: View {
                         await placeOrder()
                     }
                 })
-                    .padding()
+                .padding()
+                .alert("Checkout failed!", isPresented: $showingError) {
+                    Button("OK") { }
+                } message: {
+                    Text("Check your network and try again.")
+                }
 
             }
         }
@@ -47,7 +53,7 @@ struct CheckoutView: View {
     }
     
     func placeOrder() async {
-        guard let encoded = try? JSONEncoder().encode(order) else {
+        guard let encoded = try? JSONEncoder().encode(cupcake.order) else {
             print("Failed to encode order")
             return
         }
@@ -61,16 +67,17 @@ struct CheckoutView: View {
             let (data, _) = try await URLSession.shared.upload(for: request, from: encoded)
             // handle the result
             let decodedOrder = try JSONDecoder().decode(Order.self, from: data)
-            confirmationMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
+            confirmationMessage = "Your order for \(decodedOrder.quantity)x \(Cupcake.types[decodedOrder.type].lowercased()) cupcakes is on its way!"
             showingConfirmation = true
         } catch {
-            print("Checkout failed.")
+            showingError = true
+            print("\(error.localizedDescription)")
         }
     }
 }
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView(order: Order())
+        CheckoutView(cupcake: Cupcake())
     }
 }
