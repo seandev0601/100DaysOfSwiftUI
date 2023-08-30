@@ -18,6 +18,8 @@ struct RatingView: View {
     var offColor = Color.gray
     var onColor = Color.yellow
     
+    @State private var animationAmount = 1.0
+    
     var body: some View {
         HStack {
             if label.isEmpty == false {
@@ -28,7 +30,16 @@ struct RatingView: View {
                 image(for: number)
                     .foregroundColor(number > rating ? offColor : onColor)
                     .onTapGesture {
-                        rating = number
+                        withAnimation {
+                            rating = number
+                        }
+                    }
+                    .scaleEffect(number <= rating ? animationAmount : 1)
+                    .animation(.default.delay(Double(number) / 5), value: animationAmount)
+                    .onAppear {
+                        withAnimation(.linear(duration: 1)) {
+                            animationAmount = 1.25
+                        }
                     }
                     
             }

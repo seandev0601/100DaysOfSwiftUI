@@ -23,18 +23,7 @@ struct ContentView: View {
                     NavigationLink {
                         DetailView(book: book)
                     } label: {
-                        HStack {
-                            EmojiRatingView(rating: book.rating)
-                                .font(.largeTitle)
-                            
-                            VStack(alignment: .leading) {
-                                Text(book.title ?? "Unknown title")
-                                    .font(.headline)
-                                
-                                Text(book.author ?? "Unknown Author")
-                                    .foregroundColor(.secondary)
-                            }
-                        }
+                        BookItem(book: book)
                     }
                 }
                 .onDelete(perform: deleteBooks)
