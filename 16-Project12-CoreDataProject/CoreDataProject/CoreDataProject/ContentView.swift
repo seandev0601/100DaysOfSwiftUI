@@ -21,6 +21,16 @@ struct ContentView: View {
                         }
                     }
                 }
+                
+                Section("Day 58 - Part 2") {
+                    ForEach(AppData.day58Topic, id: \.name) { data in
+                        NavigationLink {
+                            data.view
+                        } label: {
+                            Text("\(data.name)")
+                        }
+                    }
+                }
             }
             .navigationTitle("Core Data")
         }
