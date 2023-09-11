@@ -46,6 +46,7 @@ To track my progress through the 100DaysOfSwiftUI challenge, I will update the f
 | [Challenge 4](13-Challenge-HabitTracker) | Habit Tracker | Day 47 |
 | [10](14-Project10-CupcakeCorner) | Cupcake Corner | Day 49 - 52 |
 | [11](15-Project11-Bookworm) | Bookworm | Day 53 - 56 |
+| [12](16-Project12-CoreDataProject) | Bookworm | Day 57 - 59 |
 
 
 Each project's folder will contain the completed code and any relevant resources for that specific topic.
