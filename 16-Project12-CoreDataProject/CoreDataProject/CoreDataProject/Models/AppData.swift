@@ -18,4 +18,8 @@ struct AppData {
         CoreDataView(name: "Dynamically filtering @FetchRequest with SwiftUI", view: AnyView(SingerView())),
         CoreDataView(name: "One-to-many relationships with Core Data, SwiftUI, and @FetchRequest", view: AnyView(CountryCandyView()))
     ]
+    
+    static let day59Topic: [CoreDataView] = [
+        CoreDataView(name: "FilteredList Challenge", view: AnyView(ChallengeView()))
+    ]
 }

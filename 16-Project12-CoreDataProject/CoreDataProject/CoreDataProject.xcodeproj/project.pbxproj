@@ -24,6 +24,7 @@
 		CD9405642AAAFC3200C9260B /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9405602AAAFC3200C9260B /* Country+CoreDataClass.swift */; };
 		CD9405652AAAFC3200C9260B /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9405612AAAFC3200C9260B /* Country+CoreDataProperties.swift */; };
 		CD9405672AAAFF7300C9260B /* CountryCandyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9405662AAAFF7300C9260B /* CountryCandyView.swift */; };
+		CD94056A2AAEAF6100C9260B /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9405692AAEAF6100C9260B /* ChallengeView.swift */; };
 		CDDE6BB92AA4369A00F68154 /* WizardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDE6BB82AA4369A00F68154 /* WizardView.swift */; };
 		CDDE6BBC2AA43EB300F68154 /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDE6BBB2AA43EB300F68154 /* CoreDataView.swift */; };
 		CDDE6BBE2AA43ED000F68154 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDE6BBD2AA43ED000F68154 /* AppData.swift */; };
@@ -49,6 +50,7 @@
 		CD9405602AAAFC3200C9260B /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CD9405612AAAFC3200C9260B /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CD9405662AAAFF7300C9260B /* CountryCandyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCandyView.swift; sourceTree = "<group>"; };
+		CD9405692AAEAF6100C9260B /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 		CDDE6BB82AA4369A00F68154 /* WizardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardView.swift; sourceTree = "<group>"; };
 		CDDE6BBB2AA43EB300F68154 /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
 		CDDE6BBD2AA43ED000F68154 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
@@ -85,8 +87,9 @@
 		CD50EF1A2AA06A5400BD1597 /* CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
-				CDDE6BBF2AA7458C00F68154 /* Day58 */,
 				CDDE6BB72AA4366700F68154 /* Day57 */,
+				CDDE6BBF2AA7458C00F68154 /* Day58 */,
+				CD9405682AAEACDA00C9260B /* Day59 */,
 				CD50EF292AA06A8500BD1597 /* Models */,
 				CD50EF1B2AA06A5400BD1597 /* CoreDataProjectApp.swift */,
 				CD50EF1D2AA06A5400BD1597 /* ContentView.swift */,
@@ -113,6 +116,14 @@
 				CD50EF2A2AA06A9500BD1597 /* DataController.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CD9405682AAEACDA00C9260B /* Day59 */ = {
+			isa = PBXGroup;
+			children = (
+				CD9405692AAEAF6100C9260B /* ChallengeView.swift */,
+			);
+			path = Day59;
 			sourceTree = "<group>";
 		};
 		CDDE6BB72AA4366700F68154 /* Day57 */ = {
@@ -220,6 +231,7 @@
 				CD50EF2E2AA06ADE00BD1597 /* CoreDataProject.xcdatamodeld in Sources */,
 				CDDE6BBC2AA43EB300F68154 /* CoreDataView.swift in Sources */,
 				CD9405642AAAFC3200C9260B /* Country+CoreDataClass.swift in Sources */,
+				CD94056A2AAEAF6100C9260B /* ChallengeView.swift in Sources */,
 				CD94055A2AAAA7EA00C9260B /* Singer+CoreDataClass.swift in Sources */,
 				CD9405652AAAFC3200C9260B /* Country+CoreDataProperties.swift in Sources */,
 				CD94055D2AAAA95500C9260B /* FilteredList.swift in Sources */,
