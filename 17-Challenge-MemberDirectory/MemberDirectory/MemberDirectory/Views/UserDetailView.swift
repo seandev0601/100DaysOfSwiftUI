@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserDetailView: View {
-    @State var user: User
+    @State var user: CachedUser
     
     var body: some View {
         ScrollView {
@@ -23,17 +23,17 @@ struct UserDetailView: View {
                         }
                         .padding(.bottom, 2)
                         
-                        Text("**Registered**\n\(user.formattedRegistered)")
+                        Text("**Registered**\n\(user.wrappedRegistered)")
                             .padding(.bottom, 2)
                         
                         Text("**Age**\n\(user.age)")
                             .padding(.bottom, 2)
-                        Text("**Company**\n\(user.company)")
+                        Text("**Company**\n\(user.wrappedCompany)")
                             .padding(.bottom, 2)
-                        Text("**Email**\n\(user.email)")
+                        Text("**Email**\n\(user.wrappedEmail)")
                             .padding(.bottom, 2)
                         
-                        Text("**Address**\n\(user.address)")
+                        Text("**Address**\n\(user.wrappedAddress)")
                             .padding(.bottom, 5)
                     }
                     
@@ -49,7 +49,7 @@ struct UserDetailView: View {
                         LazyVGrid(columns: [
                             GridItem(.adaptive(minimum:150, maximum: 200))
                         ], alignment: .leading) {
-                            ForEach(user.tags, id: \.self) { tag in
+                            ForEach(user.wrappedTags, id: \.self) { tag in
                                 Text("#\(tag)")
                                     .font(.headline)
                                     .foregroundColor(.secondary)
@@ -70,8 +70,8 @@ struct UserDetailView: View {
                         LazyVGrid(columns: [
                             GridItem(.adaptive(minimum:150, maximum: 200))
                         ], alignment: .leading) {
-                            ForEach(user.friends, id: \.id) { friend in
-                                Text(friend.name)
+                            ForEach(user.wrappedFriends, id: \.id) { friend in
+                                Text(friend.wrappedName)
                                     .font(.headline)
                                     .foregroundColor(.black)
                                     .padding(5)
@@ -90,26 +90,17 @@ struct UserDetailView: View {
                         .font(.title.bold())
                         .padding(.bottom, 5)
                     
-                    Text(user.about)
+                    Text(user.wrappedAbout)
                 }
                 .padding(.horizontal)
                 
             }
             .padding(.bottom)
         }
-        .navigationTitle(user.name)
+        .navigationTitle(user.wrappedName)
         .navigationBarTitleDisplayMode(.inline)
         .background(
             LinearGradient(gradient: Gradient(colors: [.yellow, .white]), startPoint: .bottomLeading, endPoint: .topTrailing)
         )
-    }
-}
-
-struct UserDetailView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        NavigationView {
-            UserDetailView(user: User.sample)
-        }
     }
 }

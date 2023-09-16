@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var users = [User]()
+    
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.isActive, order: .reverse),
+        SortDescriptor(\.name)
+    ], predicate: nil) var users: FetchedResults<CachedUser>
     
     var body: some View {
         NavigationView {
@@ -19,8 +24,10 @@ struct ContentView: View {
                     UserView(user: user)
                 }
             }
-            .task {
-                await loadData()
+            .onAppear {
+                Task {
+                    await loadData()
+                }
             }
             .background(
                 LinearGradient(gradient: Gradient(colors: [.red, .green]), startPoint: .bottomTrailing, endPoint: .topLeading)
@@ -50,16 +57,46 @@ struct ContentView: View {
             decoder.dateDecodingStrategy = .iso8601
             
             if let decodedResponse = try? decoder.decode([User].self, from: data) {
-                users = decodedResponse
+                let users = decodedResponse
+                
+                Task {
+                    await MainActor.run {
+                        storeCoreData(users: users)
+                    }
+                }
             }
         } catch {
             print("Invalid data: \(error.localizedDescription)")
         }
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    
+    func storeCoreData(users: [User]) {
+        for user in users {
+            let cachedUser = CachedUser(context: moc)
+            cachedUser.id = user.id
+            cachedUser.isActive = user.isActive
+            cachedUser.name = user.name
+            cachedUser.age = Int16(user.age)
+            cachedUser.email = user.email
+            cachedUser.company = user.company
+            cachedUser.about = user.about
+            cachedUser.tags = user.tags.joined(separator: ",")
+                        
+            for friend in user.friends {
+                let cachedFriend = CachedFriend(context: moc)
+                cachedFriend.id = friend.id
+                cachedFriend.name = friend.name
+                
+                cachedUser.addToFriends(cachedFriend)
+            }
+        }
+        
+        if self.moc.hasChanges {
+            do {
+                try self.moc.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }

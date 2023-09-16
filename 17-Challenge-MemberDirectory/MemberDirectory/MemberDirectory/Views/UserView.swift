@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserView: View {
-    @State var user: User
+    @State var user:CachedUser
     
     var body: some View {
         HStack(alignment: .center) {
@@ -19,7 +19,7 @@ struct UserView: View {
             
             VStack(alignment: .leading) {
                 HStack {
-                    Text(user.name)
+                    Text(user.wrappedName)
                         .font(.headline)
                     
                     Text("(\(user.age) age)")
@@ -27,7 +27,7 @@ struct UserView: View {
                         .foregroundColor(.secondary)
                 }
                 
-                Text(user.email)
+                Text(user.wrappedEmail)
                     .font(.caption)
                     .foregroundColor(.secondary)
             }
@@ -35,11 +35,5 @@ struct UserView: View {
             Spacer()
         }
         .padding(3)
-    }
-}
-
-struct UserView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserView(user: User.sample)
     }
 }
