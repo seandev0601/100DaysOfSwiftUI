@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var backgroundColor = Color.white
 
     var body: some View {
-        Day62PractiseView()
+        Day63PractiseView()
     }
 }
 
