@@ -48,6 +48,7 @@ To track my progress through the 100DaysOfSwiftUI challenge, I will update the f
 | [11](15-Project11-Bookworm) | Bookworm | Day 53 - 56 |
 | [12](16-Project12-CoreDataProject) | Bookworm | Day 57 - 59 |
 | [Challenge 5](17-Challenge-MemberDirectory) | MemberDirectory | Day 60 - 61 |
+| [13](18-Project13-Instafilter) | Instafilter | Day 62 - 67 |
 
 
 Each project's folder will contain the completed code and any relevant resources for that specific topic.
