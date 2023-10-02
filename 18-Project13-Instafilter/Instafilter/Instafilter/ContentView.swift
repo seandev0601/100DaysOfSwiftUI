@@ -13,13 +13,42 @@ struct ContentView: View {
     @State private var image: Image?
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
-    @State private var filterIntensity = 0.5
     @State private var processedImage: UIImage?
     
     private let context = CIContext()
-    @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
+    @State private var currentFilter: CIFilter = CIFilter.vibrance()
+    
+    @State private var filterIntensity = 0.5
+    @State private var filterScale = 5.0
+    @State private var filterRadius = 1.0
+    @State private var filterAmount = 0.0
     
     @State private var showingFilterSheet = false
+    @State private var showingImageSaveAlert = false
+    
+    var disableSaveButton: Bool {
+        processedImage == nil
+    }
+    
+    var filterVisible: Bool {
+        image != nil
+    }
+    
+    var intensityVisible: Bool {
+        currentFilter.inputKeys.contains(kCIInputIntensityKey)
+    }
+    
+    var radiusVisible: Bool {
+        currentFilter.inputKeys.contains(kCIInputRadiusKey)
+    }
+    
+    var scaleVisible: Bool {
+        currentFilter.inputKeys.contains(kCIInputScaleKey)
+    }
+    
+    var amountVisible: Bool {
+        currentFilter.inputKeys.contains(kCIInputAmountKey)
+    }
 
     var body: some View {
         NavigationView {
@@ -35,20 +64,71 @@ struct ContentView: View {
                         .resizable()
                         .scaledToFit()
                 }
+                .frame(height: 350)
                 .onTapGesture {
                     // Add code to select an image
                     showingImagePicker = true
                 }
                 
-                HStack {
-                    Text("Intensity")
-                    
-                    Slider(value: $filterIntensity)
-                        .onChange(of: filterIntensity) { _ in
-                            applyProcessing()
+                if filterVisible {
+                    VStack {
+                        Text(currentFilter.name)
+                            .font(.title)
+                            .padding()
+                        
+                        if intensityVisible {
+                            HStack {
+                                Text("Intensity")
+                                    .frame(width: 65)
+                                
+                                Slider(value: $filterIntensity)
+                                    .onChange(of: filterIntensity) { _ in
+                                        applyProcessing()
+                                    }
+                            }
                         }
+                        
+                        if radiusVisible {
+                            HStack {
+                                Text("Radius")
+                                    .frame(width: 65)
+                                
+                                Slider(value: $filterRadius, in: 1.0...200.0)
+                                    .onChange(of: filterRadius) { _ in
+                                        applyProcessing()
+                                    }
+                            }
+                        }
+                        
+                        if scaleVisible {
+                            HStack {
+                                Text("Scale")
+                                    .frame(width: 65)
+                                
+                                Slider(value: $filterScale, in: 0.0...10.0)
+                                    .onChange(of: filterScale) { _ in
+                                        applyProcessing()
+                                    }
+                            }
+                        }
+                        
+                        if amountVisible {
+                            HStack {
+                                Text("Amount")
+                                    .frame(width: 65)
+                                
+                                Slider(value: $filterAmount, in: -1.0...1.0)
+                                    .onChange(of: filterAmount) { _ in
+                                        applyProcessing()
+                                    }
+                            }
+                            
+                        }
+                    }
+                    .padding(.vertical)
+                    
                 }
-                .padding(.vertical)
+                Spacer()
                 
                 HStack {
                     Button("Change filter") {
@@ -58,7 +138,13 @@ struct ContentView: View {
                     Spacer()
                     
                     Button("Save", action: save)
+                        .alert("Save Image", isPresented: $showingImageSaveAlert) {
+                            Button("OK") {}
+                        } message: {
+                            Text("Save Sucess!")
+                        }
                 }
+                .disabled(disableSaveButton)
             }
             .padding([.horizontal, .bottom])
             .navigationTitle("Instafilter")
@@ -69,13 +155,20 @@ struct ContentView: View {
                 loadImage()
             }
             .confirmationDialog("Select a filter", isPresented: $showingFilterSheet) {
-                Button("Crystallize") { setFilter(CIFilter.crystallize()) }
-                Button("Edges") { setFilter(CIFilter.edges()) }
-                Button("Gaussian Blur") { setFilter(CIFilter.gaussianBlur()) }
-                Button("Pixellate") { setFilter(CIFilter.pixellate()) }
-                Button("Sepia Tone") { setFilter(CIFilter.sepiaTone()) }
-                Button("Unsharp Mask") { setFilter(CIFilter.unsharpMask()) }
-                Button("Vignette") { setFilter(CIFilter.vignette()) }
+                Group {
+                    Button("Crystallize") { setFilter(CIFilter.crystallize()) }
+                    Button("Edges") { setFilter(CIFilter.edges()) }
+                    Button("Gaussian Blur") { setFilter(CIFilter.gaussianBlur()) }
+                    Button("Pixellate") { setFilter(CIFilter.pixellate()) }
+                    Button("Sepia Tone") { setFilter(CIFilter.sepiaTone()) }
+                    Button("Unsharp Mask") { setFilter(CIFilter.unsharpMask()) }
+                    Button("Vignette") { setFilter(CIFilter.vignette()) }
+                }
+                
+                Button("Vibrance", role: .destructive) { setFilter(CIFilter.vibrance()) }
+                Button("Pointillize", role: .destructive) { setFilter(CIFilter.pointillize()) }
+                Button("Box Blur", role: .destructive) { setFilter(CIFilter.boxBlur()) }
+                
                 Button("Cancel", role: .cancel) { }
             }
         }
@@ -95,7 +188,7 @@ struct ContentView: View {
         let imageSaver = ImageSaver()
         
         imageSaver.successHandler = {
-            print("Sucess!")
+            showingImageSaveAlert = true
         }
         
         imageSaver.errorHandler = {
@@ -113,14 +206,16 @@ struct ContentView: View {
         }
         
         if inputKeys.contains(kCIInputRadiusKey) {
-            currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey)
+            currentFilter.setValue(filterRadius, forKey: kCIInputRadiusKey)
         }
         
         if inputKeys.contains(kCIInputScaleKey) {
-            currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey)
+            currentFilter.setValue(filterScale, forKey: kCIInputScaleKey)
         }
         
-        
+        if inputKeys.contains(kCIInputAmountKey) {
+            currentFilter.setValue(filterAmount, forKey: kCIInputAmountKey)
+        }
         
         guard let outputImage = currentFilter.outputImage else { return }
         
