@@ -9,13 +9,14 @@ import SwiftUI
 import MapKit
 import LocalAuthentication
 
-struct Location: Identifiable {
-    let id = UUID()
-    let name: String
-    let coordinate: CLLocationCoordinate2D
-}
-
 struct MapKitAndFaceIDView: View {
+    
+    struct Location: Identifiable {
+        let id = UUID()
+        let name: String
+        let coordinate: CLLocationCoordinate2D
+    }
+    
     @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 25.045314, longitude: 121.5463445), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     
     let locations = [
