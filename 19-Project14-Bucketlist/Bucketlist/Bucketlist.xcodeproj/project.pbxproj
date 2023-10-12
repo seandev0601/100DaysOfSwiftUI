@@ -15,6 +15,7 @@
 		CD2E77152ACE57250050DA6E /* MapKitAndFaceIDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E77142ACE57250050DA6E /* MapKitAndFaceIDView.swift */; };
 		CD2E77172ACF89D40050DA6E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E77162ACF89D40050DA6E /* Location.swift */; };
 		CD2E77192ACFA5E70050DA6E /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E77182ACFA5E70050DA6E /* EditView.swift */; };
+		CD4E46232AD7CA1A006E0B64 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4E46222AD7CA1A006E0B64 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		CD2E77142ACE57250050DA6E /* MapKitAndFaceIDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitAndFaceIDView.swift; sourceTree = "<group>"; };
 		CD2E77162ACF89D40050DA6E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CD2E77182ACFA5E70050DA6E /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		CD4E46222AD7CA1A006E0B64 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				CD2E770F2ACC2A120050DA6E /* Day68 */,
 				CD2E77132ACE57020050DA6E /* Day69 */,
+				CD4E46212AD7CA0C006E0B64 /* Models */,
 				CD2E77012ACBE9E30050DA6E /* BucketlistApp.swift */,
 				CD2E77162ACF89D40050DA6E /* Location.swift */,
 				CD2E77182ACFA5E70050DA6E /* EditView.swift */,
@@ -93,6 +96,14 @@
 				CD2E77142ACE57250050DA6E /* MapKitAndFaceIDView.swift */,
 			);
 			path = Day69;
+			sourceTree = "<group>";
+		};
+		CD4E46212AD7CA0C006E0B64 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD4E46222AD7CA1A006E0B64 /* Result.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				CD2E77042ACBE9E30050DA6E /* ContentView.swift in Sources */,
 				CD2E77192ACFA5E70050DA6E /* EditView.swift in Sources */,
 				CD2E77172ACF89D40050DA6E /* Location.swift in Sources */,
+				CD4E46232AD7CA1A006E0B64 /* Result.swift in Sources */,
 				CD2E77122ACC2A540050DA6E /* StringSaverView.swift in Sources */,
 				CD2E77022ACBE9E30050DA6E /* BucketlistApp.swift in Sources */,
 			);

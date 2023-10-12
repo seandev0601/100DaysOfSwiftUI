@@ -3,6 +3,7 @@
 - [Part 1](https://www.hackingwithswift.com/100/swiftui/68)
 - [Part 2](https://www.hackingwithswift.com/100/swiftui/69)
 - [Part 3](https://www.hackingwithswift.com/100/swiftui/70)
+- [Part 4](https://www.hackingwithswift.com/100/swiftui/71)
 
 ## **Learn**
 
@@ -33,6 +34,14 @@
     - Edit location
     - Use closure to update location
     - Fix clipping issues
+  
+- Day 71
+    - Codable
+    - URLSession
+        - JSONDecoder
+        - await、async
+    - Comparable
+    - Computed property
     
 ## **My Note**
 
@@ -41,6 +50,8 @@
 - [Day 69](https://hsiangdev.notion.site/Day-69-Project-14-Part-2-Bucket-List-100DaysOfSwiftUI-b89d56a5391c45d995803a966408df62?pvs=4)
   
 - [Day 70](https://hsiangdev.notion.site/Day-70-Project-14-Part-3-Bucket-List-100DaysOfSwiftUI-a20974860d4f4fb1a83eaa17c304246a?pvs=4)
+  
+- [Day 71](https://hsiangdev.notion.site/Day-71-Project-14-Part-4-Bucket-List-100DaysOfSwiftUI-08b7216428a24731bebe536cd1becf05?pvs=4)
 
 ## Screenshots
 
@@ -65,5 +76,13 @@
     <img src="Screenshots/day70-Bucketlist-1.png" width="250">
     <img src="Screenshots/day70-Bucketlist-2.png" width="250">
     <img src="Screenshots/day70-Bucketlist-3.png" width="250">
+</div>
+
+- Day 71
+
+<div>
+    <img src="Screenshots/day71-Bucketlist-1.png" width="250">
+    <img src="Screenshots/day71-Bucketlist-2.png" width="250">
+    <img src="Screenshots/day71-Bucketlist-3.png" width="250">
 </div>
   
