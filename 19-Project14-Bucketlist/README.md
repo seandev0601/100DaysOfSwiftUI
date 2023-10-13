@@ -4,6 +4,7 @@
 - [Part 2](https://www.hackingwithswift.com/100/swiftui/69)
 - [Part 3](https://www.hackingwithswift.com/100/swiftui/70)
 - [Part 4](https://www.hackingwithswift.com/100/swiftui/71)
+- [Part 5](https://www.hackingwithswift.com/100/swiftui/72)
 
 ## **Learn**
 
@@ -42,6 +43,18 @@
         - await、async
     - Comparable
     - Computed property
+  
+- Day 72
+    - MVVM
+        - ViewModel
+        - ObservableObject
+        - @MainActor
+    - documentDirectory
+        - load data、save data
+    - LocalAuthentication
+        - Permissions
+        - Task & @MainActor
+        - Simulator test
     
 ## **My Note**
 
@@ -52,6 +65,8 @@
 - [Day 70](https://hsiangdev.notion.site/Day-70-Project-14-Part-3-Bucket-List-100DaysOfSwiftUI-a20974860d4f4fb1a83eaa17c304246a?pvs=4)
   
 - [Day 71](https://hsiangdev.notion.site/Day-71-Project-14-Part-4-Bucket-List-100DaysOfSwiftUI-08b7216428a24731bebe536cd1becf05?pvs=4)
+  
+- [Day 72](https://hsiangdev.notion.site/Day-72-Project-14-Part-5-Bucket-List-100DaysOfSwiftUI-fc9295b1302641298447d119f721fbe0?pvs=4)
 
 ## Screenshots
 
@@ -84,5 +99,13 @@
     <img src="Screenshots/day71-Bucketlist-1.png" width="250">
     <img src="Screenshots/day71-Bucketlist-2.png" width="250">
     <img src="Screenshots/day71-Bucketlist-3.png" width="250">
+</div>
+
+- Day 72
+
+<div>
+    <img src="Screenshots/day72-Bucketlist-1.png" width="250">
+    <img src="Screenshots/day72-Bucketlist-2.png" width="250">
+    <img src="Screenshots/day72-Bucketlist-3.png" width="250">
 </div>
   
