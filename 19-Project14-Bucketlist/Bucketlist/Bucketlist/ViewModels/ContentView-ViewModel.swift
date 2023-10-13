@@ -16,6 +16,9 @@ extension ContentView {
         @Published var selectedPlace: Location?
         @Published var isUnlocked = false
         
+        @Published var showingError = false
+        @Published var errorMessage = ""
+        
         let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedPlaces")
         
         init() {
@@ -61,16 +64,24 @@ extension ContentView {
                 let reason = "Please authenticate yourself to unlock your places."
                 
                 context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
-                    if success {
+                    
+                    if let error = authenticationError {
+                        Task {  @MainActor in
+                            self.errorMessage = error.localizedDescription
+                            self.showingError = true
+                        }
+                    } else if success {
                         Task {  @MainActor in
                             self.isUnlocked = true
                         }
-                    } else {
-                        // error
                     }
                 }
             } else {
                 // no biometrics
+                Task {  @MainActor in
+                    self.errorMessage = "Your device does not support biometrics."
+                    self.showingError = true
+                }
             }
         }
     }

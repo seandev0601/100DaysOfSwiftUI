@@ -5,6 +5,7 @@
 - [Part 3](https://www.hackingwithswift.com/100/swiftui/70)
 - [Part 4](https://www.hackingwithswift.com/100/swiftui/71)
 - [Part 5](https://www.hackingwithswift.com/100/swiftui/72)
+- [Part 6](https://www.hackingwithswift.com/100/swiftui/73)
 
 ## **Learn**
 
@@ -55,6 +56,18 @@
         - Permissions
         - Task & @MainActor
         - Simulator test
+
+- Day 73 Challenge
+    1. Our + button is rather hard to tap. Try moving all its modifiers to the image inside the button – what difference does it make, and can you think why?
+        - modifiers
+    2. Our app silently fails when errors occur during biometric authentication, so add code to show those errors in an alert.
+        - error alert
+    3. Create another view model, this time for EditView. What you put in the view model is down to you, but I would recommend leaving dismiss and onSave in the view itself – the former uses the environment, which can only be read by the view, and the latter doesn’t really add anything when moved into the model.
+        - MVVM
+            - StateObject(wrappedValue:)
+            - Published(initialValue: )
+    4. Challenge myself - Show more Wikipedia Geosearch data.
+        - Add thumbnail image
     
 ## **My Note**
 
@@ -67,6 +80,8 @@
 - [Day 71](https://hsiangdev.notion.site/Day-71-Project-14-Part-4-Bucket-List-100DaysOfSwiftUI-08b7216428a24731bebe536cd1becf05?pvs=4)
   
 - [Day 72](https://hsiangdev.notion.site/Day-72-Project-14-Part-5-Bucket-List-100DaysOfSwiftUI-fc9295b1302641298447d119f721fbe0?pvs=4)
+  
+- [Day 73](https://hsiangdev.notion.site/Day-73-Project-14-Bucket-List-Challenge-100DaysOfSwiftUI-6098083edbe24364a1825cfb00588725?pvs=4)
 
 ## Screenshots
 
@@ -108,4 +123,12 @@
     <img src="Screenshots/day72-Bucketlist-2.png" width="250">
     <img src="Screenshots/day72-Bucketlist-3.png" width="250">
 </div>
+
+- Day 73
+
+<div>
+    <img src="Screenshots/day73-Challenge-1.png" width="250">
+    <img src="Screenshots/day73-Challenge-2.png" width="250">
+</div>
+
   
