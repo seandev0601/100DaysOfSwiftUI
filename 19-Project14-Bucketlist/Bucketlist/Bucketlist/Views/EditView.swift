@@ -59,3 +59,4 @@ struct EditView_Previews: PreviewProvider {
         EditView(location: Location.example) { _ in }
     }
 }
+
