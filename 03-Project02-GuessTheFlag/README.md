@@ -48,7 +48,14 @@ Button {
     1. When you tap a flag, make it spin around 360 degrees on the Y axis.
     2. Make the other two buttons fade out to 25% opacity.
     3. Add a third effect of your choosing to the two flags the user didn’t choose – maybe make them scale down? Or flip in a different direction? Experiment! (change **blur**)
-
+  
+- Day 75 Fixing Guess the Flag
+  
+SwiftUI’s default behavior is to read out the **image names** as their **VoiceOver label**, which means anyone using VoiceOver can just move over our three flags to have the system announce which one is correct.
+  
+To fix this we need to **add text descriptions** for **each of our flags.**
+  
+  - accessibilityLabel()
 
 ## **My Note**
 
@@ -56,6 +63,7 @@ Button {
 - [Day 21](https://hsiangdev.notion.site/Day-21-Project-2-part-2-100DaysOfSwiftUI-4eaeee1d01254f54b5dc3312299a57ad?pvs=4)
 - [Day 22](https://hsiangdev.notion.site/Day-22-Project-2-part-3-100DaysOfSwiftUI-8c5e0e5df37645b5aa9af1cf43d8b8a8?pvs=4)
 - [Day 34](https://hsiangdev.notion.site/Day-34-Project-6-part-3-Challenge-100DaysOfSwiftUI-f8efda13e99a4b10b71e4d770b826f96?pvs=4)
+- [Day 75](https://hsiangdev.notion.site/Day-75-Project-15-Part2-Accessibility-Sandbox-100DaysOfSwiftUI-946ba1a6cc42475b91259ac48e2bd452#d5bbe4fdd57c4b4a9aa09af9c3b87c17)
 
 ## Screenshots
 
