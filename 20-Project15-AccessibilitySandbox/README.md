@@ -20,6 +20,11 @@
     - Fixing [Word Scramble](https://github.com/seandev0601/100DaysOfSwiftUI/tree/main/07-Project05-WordScramble)
         - accessibilityElement(children:)
         - accessibilityHint()
+    - Fixing [Bookworm](https://github.com/seandev0601/100DaysOfSwiftUI/tree/main/15-Project11-Bookworm)
+        - accessibilityAddTraits()
+        - accessibilityElement()
+        - accessibilityValue()
+        - accessibilityAdjustableAction()
   
     
     

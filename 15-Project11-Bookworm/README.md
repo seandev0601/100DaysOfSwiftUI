@@ -6,6 +6,7 @@ In this project we’re going to build an app to track which books you’ve read
 - [Part 2](https://www.hackingwithswift.com/100/swiftui/54)
 - [Part 3](https://www.hackingwithswift.com/100/swiftui/55)
 - [Part 4](https://www.hackingwithswift.com/100/swiftui/56)
+- [Day 75: Fixing Bookworm](https://www.hackingwithswift.com/books/ios-swiftui/fixing-bookworm)
 
 ## **Learn**
 
@@ -39,7 +40,21 @@ In this project we’re going to build an app to track which books you’ve read
         - other add animation to `**EmojiRatingView**`
     3. Add a new “date” attribute to the Book entity, assigning **`Date.now`** to it so it gets the current date and time, then format that nicely somewhere in **`DetailView`**.
     4. Add animation to `**RatingView**`
+  
+- Day 75 Fixing Bookworm
+  
+    > If I tap one of the gray stars, VoiceOver reads out to me, “star, fill, image, possibly airplane, star” – it’s really not useful at all.  
     
+    > RatingView is designed to be reusable.
+   
+    - Simplified Modifiers Approach
+        - accessibilityLabel()
+        - accessibilityAddTraits()
+    - Optimal Approach
+        - accessibilityElement()
+        - accessibilityLabel()
+        - accessibilityValue()
+        - accessibilityAdjustableAction()
     
 ## **My Note**
 
@@ -48,6 +63,7 @@ In this project we’re going to build an app to track which books you’ve read
 - [Day 55](https://hsiangdev.notion.site/Day-55-Project-11-Part-3-Bookworm-100DaysOfSwiftUI-0b520a58181c4ba4bd953326ef3bc95d?pvs=4)
 
 - [Day 56](https://hsiangdev.notion.site/Day-56-Project-11-Part-4-Bookworm-100DaysOfSwiftUI-3c7ceedbbe1c4e5abe8b08fb8c50d78d?pvs=4)
+- [Day 75](https://hsiangdev.notion.site/Day-75-Project-15-Part2-Accessibility-Sandbox-100DaysOfSwiftUI-946ba1a6cc42475b91259ac48e2bd452?pvs=4#0695eeaa8c774e35a8479b690cbb1dd5)
 
 ## Screenshots
 
