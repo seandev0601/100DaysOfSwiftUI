@@ -17,6 +17,9 @@
 - Day 75
     - Fixing [Guess the Flag](https://github.com/seandev0601/100DaysOfSwiftUI/tree/main/03-Project02-GuessTheFlag)
         - accessibilityLabel()
+    - Fixing [Word Scramble](https://github.com/seandev0601/100DaysOfSwiftUI/tree/main/07-Project05-WordScramble)
+        - accessibilityElement(children:)
+        - accessibilityHint()
   
     
     

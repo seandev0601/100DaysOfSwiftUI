@@ -36,6 +36,9 @@ struct ContentView: View {
                                 Text("+ \(1 + word.count)")
                                     .foregroundColor(.green)
                             }
+                            .accessibilityElement(children: .ignore)
+                            .accessibilityLabel(word)
+                            .accessibilityHint("\(word.count) letters")
                         }
                     }
                 }
