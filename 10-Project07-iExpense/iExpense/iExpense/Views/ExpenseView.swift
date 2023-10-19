@@ -40,6 +40,9 @@ struct ExpenseView: View {
                 .foregroundColor(color)
         }
         .padding(2)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(expense.name) cost \(expense.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))")
+        .accessibilityHint(expense.type)
     }
 }
 
