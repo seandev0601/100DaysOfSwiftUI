@@ -26,6 +26,13 @@
         - accessibilityValue()
         - accessibilityAdjustableAction()
   
+- Day 76
+1. The check out view in [**Cupcake Corner**](https://github.com/seandev0601/100DaysOfSwiftUI/tree/main/14-Project10-CupcakeCorner) uses an **image** and **loading spinner** that don’t add anything to the UI, so find a way to **make** the **screenreader** not read them out.
+- .accessibilityHidden(true)
+
+2. Fix the **list rows** in [**iExpense**](https://github.com/seandev0601/100DaysOfSwiftUI/tree/main/14-Project10-CupcakeCorner) so they **read** out the **name** and **value** in **one single VoiceOver label**, and **their type in a hint**.
+
+3. Do a **full** **accessibility review of [Moonshot](https://github.com/seandev0601/100DaysOfSwiftUI/tree/main/11-Project08-Moonshot)** – what changes do you need to make so that it’s fully accessible?
     
     
 ## **My Note**
