@@ -32,6 +32,9 @@ struct GridItemView: View {
             .frame(maxWidth: .infinity)
             .background(.lightBackground)
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(name)
+        .accessibilityHint(date)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .overlay(
             RoundedRectangle(cornerRadius: 10)

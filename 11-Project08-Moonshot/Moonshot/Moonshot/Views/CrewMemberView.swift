@@ -17,10 +17,12 @@ struct CrewMemberView: View {
                 .resizable()
                 .frame(width: 104, height: 72)
                 .clipShape(Capsule())
+                .accessibilityHidden(true)
                 .overlay(
                     Capsule()
                         .strokeBorder(.white, lineWidth: 1)
                 )
+            
             VStack(alignment: .leading) {
                 Text(name)
                     .foregroundColor(.white)
@@ -30,6 +32,7 @@ struct CrewMemberView: View {
                     .foregroundColor(.secondary)
             }
             .padding(.horizontal)
+            .accessibilityElement(children: .combine)
         }
     }
 }

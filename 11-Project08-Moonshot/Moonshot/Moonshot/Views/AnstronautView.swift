@@ -16,6 +16,7 @@ struct AnstronautView: View {
                 Image(anstronaut.id)
                     .resizable()
                     .scaledToFit()
+                    .accessibilityHidden(true)
                 Text(anstronaut.description)
                     .foregroundColor(.white)
                     .padding()

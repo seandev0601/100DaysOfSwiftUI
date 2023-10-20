@@ -38,6 +38,11 @@
         - .accessibilityHint()
 
     3. Do a **full** **accessibility review of [Moonshot](https://github.com/seandev0601/100DaysOfSwiftUI/tree/main/11-Project08-Moonshot)** – what changes do you need to make so that it’s fully accessible?
+        - .accessibilityElement(children: .ignore)
+        - .accessibilityLabel()
+        - .accessibilityHint()
+        - .accessibilityElement(children: .combine)
+        - .accessibilityAddTraits(.isButton)
     
     
 ## **My Note**

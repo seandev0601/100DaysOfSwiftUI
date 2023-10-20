@@ -33,6 +33,7 @@ struct MissionView: View {
                         .onTapGesture {
                             animationEnable.toggle()
                         }
+                        .accessibilityHidden(true)
                     
 
                     VStack(alignment: .leading) {
@@ -84,6 +85,7 @@ struct MissionView: View {
                                     name: crewMember.astronaut.name,
                                     role: crewMember.role)
                             }
+                            .accessibilityAddTraits(.isButton)
                         }
                     }
                 }
