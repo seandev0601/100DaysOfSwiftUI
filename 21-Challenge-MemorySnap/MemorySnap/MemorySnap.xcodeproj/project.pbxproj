@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD6CBE0A2AECDD6F005C465F /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6CBE092AECDD6F005C465F /* LocationFetcher.swift */; };
 		CD989ACC2AE3E43200E68B9E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD989ACB2AE3E43200E68B9E /* HomeView.swift */; };
 		CD989ACE2AE3E43E00E68B9E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD989ACD2AE3E43E00E68B9E /* DetailView.swift */; };
 		CD989AD02AE3E44900E68B9E /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD989ACF2AE3E44900E68B9E /* AddView.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD6CBE092AECDD6F005C465F /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		CD989ACB2AE3E43200E68B9E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CD989ACD2AE3E43E00E68B9E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		CD989ACF2AE3E44900E68B9E /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				CDDA4FE22AE36B0B00AFDEA9 /* ImagePicker.swift */,
 				CDDA4FE42AE3B70E00AFDEA9 /* FileStorage.swift */,
+				CD6CBE092AECDD6F005C465F /* LocationFetcher.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			files = (
 				CDDA4FCE2AE251B300AFDEA9 /* ContentView.swift in Sources */,
 				CD989ACC2AE3E43200E68B9E /* HomeView.swift in Sources */,
+				CD6CBE0A2AECDD6F005C465F /* LocationFetcher.swift in Sources */,
 				CD989AD42AE3E4BA00E68B9E /* AddView-ViewModel.swift in Sources */,
 				CDDA4FE02AE3625900AFDEA9 /* FileManager+Extension.swift in Sources */,
 				CDDA4FE32AE36B0B00AFDEA9 /* ImagePicker.swift in Sources */,
@@ -351,6 +355,7 @@
 				DEVELOPMENT_TEAM = YQ88N3YLMB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Use location for snap.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -380,6 +385,7 @@
 				DEVELOPMENT_TEAM = YQ88N3YLMB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Use location for snap.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

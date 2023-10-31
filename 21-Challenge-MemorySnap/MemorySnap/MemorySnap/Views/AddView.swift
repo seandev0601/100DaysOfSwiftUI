@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct AddView: View {
     @Environment(\.dismiss) var dismiss
@@ -35,6 +36,23 @@ struct AddView: View {
                     .padding()
                 Spacer()
                 
+                if let coordinate = viewModel.coordinate {
+                    if #available(iOS 17, *) {
+                        Map(initialPosition: .region(MKCoordinateRegion(center: coordinate, span: .init(latitudeDelta: 0.01, longitudeDelta: 0.01)))) {
+                            Marker("", coordinate: coordinate)
+                                .tint(.orange)
+                        }
+                    } else {
+                        Map(coordinateRegion: .constant(MKCoordinateRegion(center: coordinate, span: .init(latitudeDelta: 0.01, longitudeDelta: 0.01))), annotationItems: viewModel.location) { _ in
+                            MapMarker(coordinate: coordinate)
+                        }
+                        .frame(height: .infinity)
+                    }
+                } else {
+                    Button("Load location") {
+                        viewModel.loadLocation()
+                    }
+                }
             }
             .background(
                 LinearGradient(gradient: Gradient(colors: [.secondary, .white]), startPoint: .top, endPoint: .bottom)

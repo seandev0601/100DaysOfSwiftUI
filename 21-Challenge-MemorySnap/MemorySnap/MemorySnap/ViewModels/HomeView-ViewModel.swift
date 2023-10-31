@@ -28,11 +28,13 @@ extension HomeView {
         
         
         func add(user: User) {
-            users.append(user)
-            
-            let fileStorage = FileStorage(type: .json)
-            fileStorage.saveUserData(users)
-            users.sort()
+            DispatchQueue.main.async{
+                self.users.append(user)
+                
+                let fileStorage = FileStorage(type: .json)
+                fileStorage.saveUserData(self.users)
+                self.users.sort()
+            }
         }
     }
 }

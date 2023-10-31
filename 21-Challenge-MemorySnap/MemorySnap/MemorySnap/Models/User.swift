@@ -7,11 +7,14 @@
 
 import Foundation
 import SwiftUI
+import CoreLocation
 
 struct User: Codable, Comparable, Identifiable {
     let id: UUID
     let name: String
     let photoPath: String
+    let latitude: Double?
+    let longitude: Double?
     let createTime: Date
     
     var image: Image? {
@@ -21,6 +24,13 @@ struct User: Codable, Comparable, Identifiable {
         } else {
             return nil
         }
+    }
+    
+    var coordinate: CLLocationCoordinate2D? {
+        guard let latitude = latitude else { return nil }
+        guard let longitude = longitude else { return nil }
+        
+        return .init(latitude: latitude, longitude: longitude)
     }
     
     static func < (lhs: User, rhs: User) -> Bool {
