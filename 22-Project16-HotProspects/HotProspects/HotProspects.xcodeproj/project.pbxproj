@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD60E8122AF231BD004F0265 /* ObjectWillChangeAndResultAndInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD60E8112AF231BD004F0265 /* ObjectWillChangeAndResultAndInterpolation.swift */; };
 		CD8BE4DD2AF104C6001B6E9A /* HotProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8BE4DC2AF104C6001B6E9A /* HotProspectsApp.swift */; };
 		CD8BE4DF2AF104C6001B6E9A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8BE4DE2AF104C6001B6E9A /* ContentView.swift */; };
 		CD8BE4E12AF104C8001B6E9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8BE4E02AF104C8001B6E9A /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD60E8112AF231BD004F0265 /* ObjectWillChangeAndResultAndInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectWillChangeAndResultAndInterpolation.swift; sourceTree = "<group>"; };
 		CD8BE4D92AF104C6001B6E9A /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8BE4DC2AF104C6001B6E9A /* HotProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProspectsApp.swift; sourceTree = "<group>"; };
 		CD8BE4DE2AF104C6001B6E9A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD60E8102AF1D493004F0265 /* Day80 */ = {
+			isa = PBXGroup;
+			children = (
+				CD60E8112AF231BD004F0265 /* ObjectWillChangeAndResultAndInterpolation.swift */,
+			);
+			path = Day80;
+			sourceTree = "<group>";
+		};
 		CD8BE4D02AF104C6001B6E9A = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +63,7 @@
 		CD8BE4DB2AF104C6001B6E9A /* HotProspects */ = {
 			isa = PBXGroup;
 			children = (
+				CD60E8102AF1D493004F0265 /* Day80 */,
 				CD8BE4EA2AF11386001B6E9A /* Day79 */,
 				CD8BE4DC2AF104C6001B6E9A /* HotProspectsApp.swift */,
 				CD8BE4DE2AF104C6001B6E9A /* ContentView.swift */,
@@ -148,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD60E8122AF231BD004F0265 /* ObjectWillChangeAndResultAndInterpolation.swift in Sources */,
 				CD8BE4DF2AF104C6001B6E9A /* ContentView.swift in Sources */,
 				CD8BE4DD2AF104C6001B6E9A /* HotProspectsApp.swift in Sources */,
 				CD8BE4EC2AF11424001B6E9A /* EnvironmentObjectAndTabView.swift in Sources */,
