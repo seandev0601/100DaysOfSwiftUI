@@ -13,6 +13,8 @@
 		CD8BE4E12AF104C8001B6E9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8BE4E02AF104C8001B6E9A /* Assets.xcassets */; };
 		CD8BE4E42AF104C8001B6E9A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8BE4E32AF104C8001B6E9A /* Preview Assets.xcassets */; };
 		CD8BE4EC2AF11424001B6E9A /* EnvironmentObjectAndTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8BE4EB2AF11424001B6E9A /* EnvironmentObjectAndTabView.swift */; };
+		CDFDEA962AF3835C00307A9E /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = CDFDEA952AF3835C00307A9E /* SamplePackage */; };
+		CDFDEA992AF48B9600307A9E /* Day81Practise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFDEA982AF48B9600307A9E /* Day81Practise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,7 @@
 		CD8BE4E02AF104C8001B6E9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD8BE4E32AF104C8001B6E9A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD8BE4EB2AF11424001B6E9A /* EnvironmentObjectAndTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjectAndTabView.swift; sourceTree = "<group>"; };
+		CDFDEA982AF48B9600307A9E /* Day81Practise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day81Practise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDFDEA962AF3835C00307A9E /* SamplePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +67,7 @@
 		CD8BE4DB2AF104C6001B6E9A /* HotProspects */ = {
 			isa = PBXGroup;
 			children = (
+				CDFDEA972AF3845B00307A9E /* Day81 */,
 				CD60E8102AF1D493004F0265 /* Day80 */,
 				CD8BE4EA2AF11386001B6E9A /* Day79 */,
 				CD8BE4DC2AF104C6001B6E9A /* HotProspectsApp.swift */,
@@ -89,6 +94,14 @@
 			path = Day79;
 			sourceTree = "<group>";
 		};
+		CDFDEA972AF3845B00307A9E /* Day81 */ = {
+			isa = PBXGroup;
+			children = (
+				CDFDEA982AF48B9600307A9E /* Day81Practise.swift */,
+			);
+			path = Day81;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,6 +118,9 @@
 			dependencies = (
 			);
 			name = HotProspects;
+			packageProductDependencies = (
+				CDFDEA952AF3835C00307A9E /* SamplePackage */,
+			);
 			productName = HotProspects;
 			productReference = CD8BE4D92AF104C6001B6E9A /* HotProspects.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +149,9 @@
 				Base,
 			);
 			mainGroup = CD8BE4D02AF104C6001B6E9A;
+			packageReferences = (
+				CDFDEA942AF3835C00307A9E /* XCRemoteSwiftPackageReference "SamplePackage" */,
+			);
 			productRefGroup = CD8BE4DA2AF104C6001B6E9A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -163,6 +182,7 @@
 				CD8BE4DF2AF104C6001B6E9A /* ContentView.swift in Sources */,
 				CD8BE4DD2AF104C6001B6E9A /* HotProspectsApp.swift in Sources */,
 				CD8BE4EC2AF11424001B6E9A /* EnvironmentObjectAndTabView.swift in Sources */,
+				CDFDEA992AF48B9600307A9E /* Day81Practise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +388,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CDFDEA942AF3835C00307A9E /* XCRemoteSwiftPackageReference "SamplePackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/SamplePackage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CDFDEA952AF3835C00307A9E /* SamplePackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDFDEA942AF3835C00307A9E /* XCRemoteSwiftPackageReference "SamplePackage" */;
+			productName = SamplePackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CD8BE4D12AF104C6001B6E9A /* Project object */;
 }
