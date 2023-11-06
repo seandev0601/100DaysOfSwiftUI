@@ -5,6 +5,7 @@
 - [Part 3](https://www.hackingwithswift.com/100/swiftui/81)
 - [Part 4](https://www.hackingwithswift.com/100/swiftui/82)
 - [Part 5](https://www.hackingwithswift.com/100/swiftui/83)
+- [Part 6](https://www.hackingwithswift.com/100/swiftui/84)
 
 ## **Learn**
 
@@ -57,6 +58,17 @@
     - objectWillChange.send()
     - fileprivate(set)
     
+- Day 84
+
+    - UserDefaults
+    - access control
+    - contextMenu
+    - Save image to photo library
+    - UserNotifications
+        - requestAuthorization
+        - UNNotificationRequest
+    - swipeActions
+    
 ## **My Note**
 
 - [Day 79](https://hsiangdev.notion.site/Day-79-Project-16-Hot-Prospects-100DaysOfSwiftUI-6dc26b92dcd14bcc8cadb378880100cc?pvs=4)
@@ -64,6 +76,7 @@
 - [Day 81](https://hsiangdev.notion.site/Day-81-Project-16-part-3-Hot-Prospects-100DaysOfSwiftUI-46399282aa8a424482f65e048a5f3123?pvs=4)
 - [Day 82](https://hsiangdev.notion.site/Day-82-Project-16-part-4-Hot-Prospects-100DaysOfSwiftUI-5a0247dd83754bab9a38cf01cac102bc?pvs=4)
 - [Day 83](https://hsiangdev.notion.site/Day-83-Project-16-part-5-Hot-Prospects-100DaysOfSwiftUI-9af3a47df23c47b09ea8a8dcdb02ace8?pvs=4)
+- [Day 84](https://hsiangdev.notion.site/Day-84-Project-16-part-6-Hot-Prospects-100DaysOfSwiftUI-c0197d157ecb4096a2d5a884af3c9983?pvs=4)
 
 ## Screenshots
 
@@ -96,6 +109,14 @@
     <img src="Screenshots/day83-HotProspects-1.png" width="250">
     <img src="Screenshots/day83-HotProspects-2.png" width="250">
     <img src="Screenshots/day83-HotProspects-3.png" width="250">
+</div>
+
+- Day 84
+
+<div>
+    <img src="Screenshots/day84-HotProspects-1.png" width="250">
+    <img src="Screenshots/day84-HotProspects-2.png" width="250">
+    <img src="Screenshots/day84-HotProspects-3.png" width="250">
 </div>
 
   
