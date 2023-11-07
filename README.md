@@ -52,6 +52,7 @@ To track my progress through the 100DaysOfSwiftUI challenge, I will update the f
 | [14](19-Project14-Bucketlist) | Bucketlist | Day 68 - 73 |
 | [15](20-Project15-AccessibilitySandbox) | AccessibilitySandbox | Day 74 - 76 |
 | [Challenge 6](21-Challenge-MemorySnap) | MemorySnap | Day 77 - 78 |
+| [16](22-Project16-HotProspects) | HotProspects | Day 79 - 85 |
 
 
 Each project's folder will contain the completed code and any relevant resources for that specific topic.
