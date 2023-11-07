@@ -16,6 +16,7 @@ struct ProspectsView: View {
     
     @EnvironmentObject var prospects: Prospects
     @State private var isShowingScanner = false
+    @State private var showingSortSheet = false
     
     let filter: FilterType
     
@@ -34,10 +35,15 @@ struct ProspectsView: View {
         switch filter {
         case .none:
             return prospects.people
+                .sorted(by: prospects.sortField.sorted)
         case .contacted:
-            return prospects.people.filter { $0.isContacted }
+            return prospects.people
+                .filter { $0.isContacted }
+                .sorted(by: prospects.sortField.sorted)
         case .uncontacted:
-            return prospects.people.filter { !$0.isContacted }
+            return prospects.people
+                .filter { !$0.isContacted }
+                .sorted(by: prospects.sortField.sorted)
         }
     }
     
@@ -45,11 +51,19 @@ struct ProspectsView: View {
         NavigationView {
             List {
                 ForEach(filterProspects) { prospect in
-                    VStack(alignment: .leading) {
-                        Text(prospect.name)
-                            .font(.headline)
-                        Text(prospect.emailAddress)
-                            .foregroundColor(.secondary)
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(prospect.name)
+                                .font(.headline)
+                            Text(prospect.emailAddress)
+                                .foregroundColor(.secondary)
+                        }
+                        Spacer()
+                        
+                        if filter == .none {
+                            Image(systemName: prospect.isContacted ? "person.crop.circle.fill.badge.checkmark" :  "person.crop.circle.badge.xmark")
+                                .foregroundColor(prospect.isContacted ? .green : .red)
+                        }
                     }
                     .swipeActions {
                         if prospect.isContacted {
@@ -80,14 +94,25 @@ struct ProspectsView: View {
             .navigationTitle(title)
             .toolbar {
                 Button {
+                    showingSortSheet = true
+                } label: {
+                    Label("Sort", systemImage: "line.3.horizontal.decrease.circle")
+                }
+                
+                Button {
                     isShowingScanner = true
                 } label: {
                     Label("Scan", systemImage: "qrcode.viewfinder")
                 }
             }
             .sheet(isPresented: $isShowingScanner, content: {
-                CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: handleScan)
+                CodeScannerView(codeTypes: [.qr], simulatedData: "Cristin Hudson\ncristin@gmail.com", completion: handleScan)
             })
+            .confirmationDialog("Sort by \(prospects.sortField.fieldName)", isPresented: $showingSortSheet, titleVisibility: .visible) {
+                Button("Name") { prospects.sortField = .name }
+                Button("Email") { prospects.sortField = .email }
+                Button("Time") { prospects.sortField = .time }
+            }
         }
     }
     

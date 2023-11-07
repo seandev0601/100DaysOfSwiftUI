@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD1BC5C32AF9C8C500945314 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1BC5C22AF9C8C500945314 /* FileManager+Extension.swift */; };
 		CD60E8122AF231BD004F0265 /* ObjectWillChangeAndResultAndInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD60E8112AF231BD004F0265 /* ObjectWillChangeAndResultAndInterpolation.swift */; };
 		CD68975F2AF871A40087D573 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CD68975E2AF871A40087D573 /* CodeScanner */; };
 		CD6897622AF8B3AB0087D573 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6897612AF8B3AB0087D573 /* ImageSaver.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD1BC5C22AF9C8C500945314 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		CD60E8112AF231BD004F0265 /* ObjectWillChangeAndResultAndInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectWillChangeAndResultAndInterpolation.swift; sourceTree = "<group>"; };
 		CD6897612AF8B3AB0087D573 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
 		CD8BE4D92AF104C6001B6E9A /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD1BC5C12AF9C8B600945314 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD1BC5C22AF9C8C500945314 /* FileManager+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CD60E8102AF1D493004F0265 /* Day80 */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 				CD8BE4EA2AF11386001B6E9A /* Day79 */,
 				CD60E8102AF1D493004F0265 /* Day80 */,
 				CDFDEA972AF3845B00307A9E /* Day81 */,
+				CD1BC5C12AF9C8B600945314 /* Extensions */,
 				CD6897602AF8B33B0087D573 /* Helper */,
 				CDFDEA9F2AF4D9C000307A9E /* Models */,
 				CDFDEA9A2AF4D7B400307A9E /* Views */,
@@ -219,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDFDEA9E2AF4D7DF00307A9E /* MeView.swift in Sources */,
+				CD1BC5C32AF9C8C500945314 /* FileManager+Extension.swift in Sources */,
 				CDFDEAA12AF4D9CC00307A9E /* Prospect.swift in Sources */,
 				CDFDEA9C2AF4D7D500307A9E /* ProspectsView.swift in Sources */,
 				CD60E8122AF231BD004F0265 /* ObjectWillChangeAndResultAndInterpolation.swift in Sources */,
