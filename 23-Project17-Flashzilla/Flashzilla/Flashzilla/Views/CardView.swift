@@ -15,6 +15,9 @@ struct CardView: View {
     @State private var isShowingAnser = false
     @State private var offset = CGSize.zero
     
+    @State private var feedback = UINotificationFeedbackGenerator()
+    @Environment(\.accessibilityVoiceOverEnabled) var voiceOverEnabled
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25, style: .continuous)
@@ -32,14 +35,20 @@ struct CardView: View {
                 .shadow(radius: 10)
             
             VStack {
-                Text(card.prompt)
-                    .font(.largeTitle)
-                    .foregroundColor(.black)
-                
-                if isShowingAnser {
-                    Text(card.answer)
-                        .font(.title)
-                        .foregroundColor(.gray)
+                if voiceOverEnabled {
+                    Text(isShowingAnser ? card.answer : card.prompt)
+                        .font(.largeTitle)
+                        .foregroundColor(.black)
+                } else {
+                    Text(card.prompt)
+                        .font(.largeTitle)
+                        .foregroundColor(.black)
+                    
+                    if isShowingAnser {
+                        Text(card.answer)
+                            .font(.title)
+                            .foregroundColor(.gray)
+                    }
                 }
             }
             .padding()
@@ -49,14 +58,24 @@ struct CardView: View {
         .rotationEffect(.degrees(Double(offset.width / 5)))
         .offset(x: offset.width * 5, y: 0)
         .opacity(2 - Double(abs(offset.width / 50)))
+        .accessibilityAddTraits(.isButton)
+        .animation(.spring(), value: offset)
         .gesture(
             DragGesture()
                 .onChanged { gesture in
                     offset = gesture.translation
+                    feedback.prepare()
                 }
                 .onEnded { _ in
                     if abs(offset.width) > 100 {
                         // remove the card
+                        
+                        if offset.width > 0 {
+                            feedback.notificationOccurred(.success)
+                        } else {
+                            feedback.notificationOccurred(.error)
+                        }
+                        
                         removal?()
                     } else {
                         offset = .zero
