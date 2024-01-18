@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     let card: Card
-    var removal: (() -> Void)? = nil
+    var removal: ((Bool) -> Void)? = nil
     
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @State private var isShowingAnser = false
@@ -30,7 +30,7 @@ struct CardView: View {
                     differentiateWithoutColor
                     ? nil
                     : RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(offset.width > 0 ? .green : .red)
+                        .fill(of: offset)
                 )
                 .shadow(radius: 10)
             
@@ -69,14 +69,13 @@ struct CardView: View {
                 .onEnded { _ in
                     if abs(offset.width) > 100 {
                         // remove the card
-                        
                         if offset.width > 0 {
                             feedback.notificationOccurred(.success)
+                            removal?(true)
                         } else {
                             feedback.notificationOccurred(.error)
+                            removal?(false)
                         }
-                        
-                        removal?()
                     } else {
                         offset = .zero
                     }
@@ -84,6 +83,18 @@ struct CardView: View {
         )
         .onTapGesture {
             isShowingAnser.toggle()
+        }
+    }
+}
+
+extension Shape {
+    func fill(of offset: CGSize) -> some View {
+        if offset.width == 0 {
+            return self.fill(.white)
+        } else if offset.width < 0 {
+            return self.fill(.red)
+        } else {
+            return self.fill(.green)
         }
     }
 }

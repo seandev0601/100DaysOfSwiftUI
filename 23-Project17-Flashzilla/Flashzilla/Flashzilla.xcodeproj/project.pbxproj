@@ -15,6 +15,7 @@
 		CD82EDF02AFB32DF00E46CB2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD82EDEF2AFB32DF00E46CB2 /* Preview Assets.xcassets */; };
 		CD8459A02B11C365003EB2EF /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD84599F2B11C365003EB2EF /* EditCards.swift */; };
 		CD9444CE2B04CAFF004526D6 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9444CD2B04CAFF004526D6 /* TimerView.swift */; };
+		CDDB1D242B59204800312446 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDB1D232B59204800312446 /* FileStorage.swift */; };
 		CDDCF73E2B03817500DDD16F /* GestureExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDCF73D2B03817500DDD16F /* GestureExample.swift */; };
 		CDDCF7402B0383D200DDD16F /* CoreHapticsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDCF73F2B0383D200DDD16F /* CoreHapticsExample.swift */; };
 		CDDCF7422B0384A500DDD16F /* UserInteractivityExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDCF7412B0384A500DDD16F /* UserInteractivityExample.swift */; };
@@ -30,6 +31,7 @@
 		CD82EDEF2AFB32DF00E46CB2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD84599F2B11C365003EB2EF /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
 		CD9444CD2B04CAFF004526D6 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		CDDB1D232B59204800312446 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		CDDCF73D2B03817500DDD16F /* GestureExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureExample.swift; sourceTree = "<group>"; };
 		CDDCF73F2B0383D200DDD16F /* CoreHapticsExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHapticsExample.swift; sourceTree = "<group>"; };
 		CDDCF7412B0384A500DDD16F /* UserInteractivityExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractivityExample.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 		CD82EDE72AFB32DD00E46CB2 /* Flashzilla */ = {
 			isa = PBXGroup;
 			children = (
+				CDDB1D222B59203C00312446 /* Helper */,
 				CD37ACC32B0CC26700EB1338 /* Views */,
 				CD37ACC02B0CC1B300EB1338 /* Models */,
 				CD9444CC2B04CAE6004526D6 /* Day87 */,
@@ -108,6 +111,14 @@
 				CD9444CD2B04CAFF004526D6 /* TimerView.swift */,
 			);
 			path = Day87;
+			sourceTree = "<group>";
+		};
+		CDDB1D222B59203C00312446 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CDDB1D232B59204800312446 /* FileStorage.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		CDDCF73C2B03812D00DDD16F /* Day86 */ = {
@@ -191,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8459A02B11C365003EB2EF /* EditCards.swift in Sources */,
+				CDDB1D242B59204800312446 /* FileStorage.swift in Sources */,
 				CD9444CE2B04CAFF004526D6 /* TimerView.swift in Sources */,
 				CDDCF7402B0383D200DDD16F /* CoreHapticsExample.swift in Sources */,
 				CD37ACC22B0CC1BE00EB1338 /* Card.swift in Sources */,

@@ -27,54 +27,33 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("Time: \(timeRemaining)")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 5)
-                    .background(.black)
-                    .clipShape(Capsule())
                 
                 ZStack {
-                    ForEach(0..<cards.count, id: \.self) { index in
-                        CardView(card: cards[index]) {
+                    ForEach(cards) { card in
+                        CardView(card: card) { isCorrect in
                             withAnimation {
-                                removeCard(at: index)
+                                moveCard(card, isCorrect: isCorrect)
                             }
                         }
-                        .stacked(at: index, in: cards.count)
-                        .allowsHitTesting(index == cards.count - 1)
-                        .accessibilityHidden(index < cards.count - 1)
+                        .stacked(at: findIndex(of: card), in: cards.count)
+                        .allowsHitTesting(findIndex(of: card) == cards.count - 1)
+                        .accessibilityHidden(findIndex(of: card) < cards.count - 1)
                         
                     }
                 }
                 .allowsHitTesting(timeRemaining > 0)
+                .offset(y: 20)
                 
                 if cards.isEmpty {
+                    Spacer()
                     Button("Start Again", action: resetCards)
                         .font(.title)
                         .padding()
                         .background(.white)
                         .foregroundColor(.black)
                         .clipShape(Capsule())
-                }
-            }
-            
-            VStack {
-                HStack {
                     Spacer()
-                    
-                    Button {
-                        showingEditScreen = true
-                    } label: {
-                        Image(systemName: "plus.circle")
-                            .padding()
-                            .background(.black.opacity(0.7))
-                            .clipShape(Circle())
-                    }
                 }
-                
-                Spacer()
             }
             
             if differentiateWithoutColor || voiceOverEnabled {
@@ -116,6 +95,28 @@ struct ContentView: View {
                 }
             }
         }
+        .overlay(alignment: .top) {
+            Text("Time: \(timeRemaining)")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 5)
+                .background(.black)
+                .clipShape(Capsule())
+                .padding()
+        }
+        .overlay(alignment: .topTrailing) {
+            Button {
+                showingEditScreen = true
+            } label: {
+                Image(systemName: "plus.circle")
+                    .font(.largeTitle)
+                    .foregroundColor(.orange)
+                    .background(.black.opacity(0.7))
+                    .clipShape(Circle())
+            }
+            .padding()
+        }
         .onReceive(timer) { time in
             guard isActive else { return }
             
@@ -136,6 +137,20 @@ struct ContentView: View {
         .onAppear(perform: resetCards)
     }
     
+    func findIndex(of card: Card) -> Int {
+        cards.firstIndex(where: { $0.id == card.id }) ?? 0
+    }
+    
+    func moveCard(_ card: Card, isCorrect: Bool) {
+        guard let index = cards.firstIndex(where: { $0.id == card.id }) else { return }
+        removeCard(at: index)
+        
+        if isCorrect == false {
+            let reCard = Card(prompt: card.prompt, answer: card.answer)
+            cards.insert(reCard, at: 0)
+        }
+    }
+    
     func removeCard(at index: Int) {
         guard index >= 0 else { return }
         cards.remove(at: index)
@@ -152,11 +167,8 @@ struct ContentView: View {
     }
     
     func loadData() {
-        if let data = UserDefaults.standard.data(forKey: "Cards") {
-            if let decoded = try? JSONDecoder().decode([Card].self, from: data) {
-                cards = decoded
-            }
-        }
+        let storage = FileStorage()
+        cards = storage.loadData()
     }
 }
 
